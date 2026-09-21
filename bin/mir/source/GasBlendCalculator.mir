@@ -1,0 +1,152 @@
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculator.mc"; @line = 1; @symbol_classdef = [GasBlendCalculator,1,6,24]; ]
+class GasBlendCalculator {
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculator.mc"; @line = 1; ]
+    <init> {
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculator.mc"; @line = 1; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculator.mc"; @line = 3; @symbol_functiondef = [calculateTopUp,3,20,34]; ]
+    static
+    function calculateTopUp() {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculator_mc_3_37_50_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculator.mc" 5 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculator_mc_3_37_50_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculator_mc_3_37_50_4_stop" ]
+        %result.1 = local;
+        symbol [ result %result.1 5 12 18 ];
+        symbol [ GasBlendCalculationResult %tmp.4 6 16 41 ];
+        %tmp.4 = getv ? :GasBlendCalculationResult;
+        %tmp.1 = newc %tmp.4 ();
+        lputv %result.1 %tmp.1;
+        symbol [ result %result.1 5 12 18 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculator.mc" 8 8 ]
+        symbol [ GasBlendData %tmp.6 8 8 20 ];
+        %tmp.6 = getv ? :GasBlendData;
+        symbol [ clearResult %tmp.7 8 21 32 ];
+        %tmp.7 = getv function %tmp.6 :clearResult;
+        invoke %tmp.6 %tmp.7();
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculator.mc" 10 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculator_mc_10_8_18_8_if_stmt:
+        symbol [ GasBlendValidator %tmp.9 10 13 30 ];
+        %tmp.9 = getv ? :GasBlendValidator;
+        symbol [ validateTopUp %tmp.10 10 31 44 ];
+        %tmp.10 = getv function %tmp.9 :validateTopUp;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        %tmp.12 = not %tmp.11;
+        bf %tmp.12 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculator_mc_10_8_18_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculator_mc_10_8_18_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculator_mc_10_48_18_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculator.mc" 12 12 ]
+        %tmp.13 = lgetv %result.1;
+        symbol [ result %tmp.13 12 12 18 ];
+        %tmp.14 = false;
+        symbol [ valid ? 12 19 24 ];
+        putv %tmp.13 :valid %tmp.14;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculator.mc" 14 12 ]
+        %tmp.15 = lgetv %result.1;
+        symbol [ result %tmp.15 14 12 18 ];
+        symbol [ GasBlendData %tmp.17 15 16 28 ];
+        %tmp.17 = getv ? :GasBlendData;
+        symbol [ errorMessage %tmp.18 15 29 41 ];
+        %tmp.18 = getv %tmp.17 :errorMessage;
+        symbol [ errorMessage ? 14 19 31 ];
+        putv %tmp.15 :errorMessage %tmp.18;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculator.mc" 17 12 ]
+        %tmp.19 = lgetv %result.1;
+        symbol [ result %tmp.19 17 19 25 ];
+        ret %tmp.19;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculator_mc_10_48_18_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculator_mc_10_8_18_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculator_mc_10_8_18_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculator.mc" 44 8 ]
+        %tmp.20 = lgetv %result.1;
+        symbol [ result %tmp.20 44 8 14 ];
+        %tmp.21 = false;
+        symbol [ valid ? 44 15 20 ];
+        putv %tmp.20 :valid %tmp.21;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculator.mc" 46 8 ]
+        %tmp.22 = lgetv %result.1;
+        symbol [ result %tmp.22 46 8 14 ];
+        %tmp.23 = "Calculation module not validated.";
+        symbol [ errorMessage ? 46 15 27 ];
+        putv %tmp.22 :errorMessage %tmp.23;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculator.mc" 49 8 ]
+        %tmp.24 = lgetv %result.1;
+        symbol [ result %tmp.24 49 15 21 ];
+        ret %tmp.24;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculator_mc_3_37_50_4_stop:
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculator.mc"; @line = 52; @symbol_functiondef = [storeResult,52,20,31]; @symbol_param<0> = [result,52,32,38]; ]
+    static
+    function storeResult(result) {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculator_mc_52_40_74_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculator.mc" 54 8 ]
+        symbol [ GasBlendData %tmp.1 54 8 20 ];
+        %tmp.1 = getv self :GasBlendData;
+        %tmp.2 = lgetv %result;
+        symbol [ result %tmp.2 55 12 18 ];
+        symbol [ valid %tmp.3 55 19 24 ];
+        %tmp.3 = getv %tmp.2 :valid;
+        symbol [ calculationValid ? 54 21 37 ];
+        putv %tmp.1 :calculationValid %tmp.3;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculator.mc" 57 8 ]
+        symbol [ GasBlendData %tmp.4 57 8 20 ];
+        %tmp.4 = getv self :GasBlendData;
+        %tmp.5 = lgetv %result;
+        symbol [ result %tmp.5 58 12 18 ];
+        symbol [ errorMessage %tmp.6 58 19 31 ];
+        %tmp.6 = getv %tmp.5 :errorMessage;
+        symbol [ errorMessage ? 57 21 33 ];
+        putv %tmp.4 :errorMessage %tmp.6;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculator.mc" 60 8 ]
+        symbol [ GasBlendData %tmp.7 60 8 20 ];
+        %tmp.7 = getv self :GasBlendData;
+        %tmp.8 = lgetv %result;
+        symbol [ result %tmp.8 61 12 18 ];
+        symbol [ requiresDrain %tmp.9 61 19 32 ];
+        %tmp.9 = getv %tmp.8 :requiresDrain;
+        symbol [ requiresDrain ? 60 21 34 ];
+        putv %tmp.7 :requiresDrain %tmp.9;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculator.mc" 63 8 ]
+        symbol [ GasBlendData %tmp.10 63 8 20 ];
+        %tmp.10 = getv self :GasBlendData;
+        %tmp.11 = lgetv %result;
+        symbol [ result %tmp.11 64 12 18 ];
+        symbol [ drainTo %tmp.12 64 19 26 ];
+        %tmp.12 = getv %tmp.11 :drainTo;
+        symbol [ drainTo ? 63 21 28 ];
+        putv %tmp.10 :drainTo %tmp.12;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculator.mc" 66 8 ]
+        symbol [ GasBlendData %tmp.13 66 8 20 ];
+        %tmp.13 = getv self :GasBlendData;
+        %tmp.14 = lgetv %result;
+        symbol [ result %tmp.14 67 12 18 ];
+        symbol [ addO2 %tmp.15 67 19 24 ];
+        %tmp.15 = getv %tmp.14 :addO2;
+        symbol [ addO2 ? 66 21 26 ];
+        putv %tmp.13 :addO2 %tmp.15;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculator.mc" 69 8 ]
+        symbol [ GasBlendData %tmp.16 69 8 20 ];
+        %tmp.16 = getv self :GasBlendData;
+        %tmp.17 = lgetv %result;
+        symbol [ result %tmp.17 70 12 18 ];
+        symbol [ addHe %tmp.18 70 19 24 ];
+        %tmp.18 = getv %tmp.17 :addHe;
+        symbol [ addHe ? 69 21 26 ];
+        putv %tmp.16 :addHe %tmp.18;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculator.mc" 72 8 ]
+        symbol [ GasBlendData %tmp.19 72 8 20 ];
+        %tmp.19 = getv self :GasBlendData;
+        %tmp.20 = lgetv %result;
+        symbol [ result %tmp.20 73 12 18 ];
+        symbol [ addTopup %tmp.21 73 19 27 ];
+        %tmp.21 = getv %tmp.20 :addTopup;
+        symbol [ addTopup ? 72 21 29 ];
+        putv %tmp.19 :addTopup %tmp.21;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculator_mc_52_40_74_4_stop:
+    }
+}
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculator.mc"; @line = 1; ]
+<init> {
+}

@@ -1,0 +1,148 @@
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; @symbol_usingAlias = [Ui,1,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc"; @line = 3; @symbol_classdef = [GasBlendDelegate,3,6,22]; @symbol_extends<0> = [Ui,3,31,33]; @symbol_extends<1> = [BehaviorDelegate,3,34,50]; ]
+class GasBlendDelegate extends Ui.BehaviorDelegate {
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc"; @line = 3; ]
+    <init> {
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc"; @line = 3; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc"; @line = 5; @position = 16; @symbol_vardef = [_view,5,16,21]; ]
+    private
+    var _view;
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc"; @line = 7; @symbol_functiondef = [initialize,7,13,23]; @symbol_param<0> = [view,7,24,28]; ]
+    function initialize(view) as Void {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_7_30_12_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc" 9 8 ]
+        symbol [ BehaviorDelegate %tmp.2 9 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 9 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc" 11 8 ]
+        %tmp.4 = lgetv %view;
+        symbol [ view %tmp.4 11 16 20 ];
+        symbol [ _view ? 11 8 13 ];
+        putv self :_view %tmp.4;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_7_30_12_4_stop:
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc"; @line = 14; @symbol_functiondef = [onPreviousPage,14,13,27]; ]
+    function onPreviousPage() {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_14_30_19_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc" 16 8 ]
+        symbol [ _view %tmp.2 16 8 13 ];
+        %tmp.2 = getv ? :_view;
+        symbol [ moveUp %tmp.3 16 14 20 ];
+        %tmp.3 = getv function %tmp.2 :moveUp;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc" 18 8 ]
+        %tmp.4 = true;
+        ret %tmp.4;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_14_30_19_4_stop:
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc"; @line = 21; @symbol_functiondef = [onNextPage,21,13,23]; ]
+    function onNextPage() {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_21_26_26_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc" 23 8 ]
+        symbol [ _view %tmp.2 23 8 13 ];
+        %tmp.2 = getv ? :_view;
+        symbol [ moveDown %tmp.3 23 14 22 ];
+        %tmp.3 = getv function %tmp.2 :moveDown;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc" 25 8 ]
+        %tmp.4 = true;
+        ret %tmp.4;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_21_26_26_4_stop:
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc"; @line = 28; @symbol_functiondef = [onSelect,28,13,21]; ]
+    function onSelect() {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_28_24_58_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc" 30 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_30_8_55_8_if_stmt:
+        symbol [ _view %tmp.2 30 12 17 ];
+        %tmp.2 = getv ? :_view;
+        symbol [ getSelectedMode %tmp.3 30 18 33 ];
+        %tmp.3 = getv function %tmp.2 :getSelectedMode;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        %tmp.5 = 0;
+        %tmp.6 = eq %tmp.4 %tmp.5;
+        bf %tmp.6 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_30_8_55_8_if_else_false;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_30_8_55_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_30_42_43_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc" 32 12 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_30_42_43_8_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_30_42_43_8_stop" ]
+        %startingView.1 = local;
+        symbol [ startingView %startingView.1 32 16 28 ];
+        symbol [ StartingGasView %tmp.10 33 20 35 ];
+        %tmp.10 = getv ? :StartingGasView;
+        %tmp.7 = newc %tmp.10 ();
+        lputv %startingView.1 %tmp.7;
+        symbol [ startingView %startingView.1 32 16 28 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc" 35 12 ]
+        symbol [ Ui %tmp.11 35 12 14 ];
+        %tmp.11 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.12 35 15 23 ];
+        %tmp.12 = getv function %tmp.11 :pushView;
+        %tmp.13 = lgetv %startingView.1;
+        symbol [ startingView %tmp.13 36 16 28 ];
+        symbol [ StartingGasDelegate %tmp.17 37 20 39 ];
+        %tmp.17 = getv ? :StartingGasDelegate;
+        %tmp.18 = lgetv %startingView.1;
+        symbol [ startingView %tmp.18 38 20 32 ];
+        %tmp.14 = newc %tmp.17 (%tmp.18);
+        symbol [ Ui %tmp.19 40 16 18 ];
+        %tmp.19 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_LEFT %tmp.20 40 19 29 ];
+        %tmp.20 = getv %tmp.19 :SLIDE_LEFT;
+        invoke %tmp.11 %tmp.12(%tmp.13, %tmp.14, %tmp.20);
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_30_42_43_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_30_8_55_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_30_8_55_8_if_else_false:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_43_15_55_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc" 45 12 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_43_15_55_8_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_43_15_55_8_stop" ]
+        %emptyView.2 = local;
+        symbol [ emptyView %emptyView.2 45 16 25 ];
+        symbol [ EmptyGasView %tmp.24 46 20 32 ];
+        %tmp.24 = getv ? :EmptyGasView;
+        %tmp.21 = newc %tmp.24 ();
+        lputv %emptyView.2 %tmp.21;
+        symbol [ emptyView %emptyView.2 45 16 25 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc" 48 12 ]
+        symbol [ Ui %tmp.25 48 12 14 ];
+        %tmp.25 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.26 48 15 23 ];
+        %tmp.26 = getv function %tmp.25 :pushView;
+        %tmp.27 = lgetv %emptyView.2;
+        symbol [ emptyView %tmp.27 49 16 25 ];
+        symbol [ EmptyGasDelegate %tmp.31 50 20 36 ];
+        %tmp.31 = getv ? :EmptyGasDelegate;
+        %tmp.32 = lgetv %emptyView.2;
+        symbol [ emptyView %tmp.32 51 20 29 ];
+        %tmp.28 = newc %tmp.31 (%tmp.32);
+        symbol [ Ui %tmp.33 53 16 18 ];
+        %tmp.33 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_LEFT %tmp.34 53 19 29 ];
+        %tmp.34 = getv %tmp.33 :SLIDE_LEFT;
+        invoke %tmp.25 %tmp.26(%tmp.27, %tmp.28, %tmp.34);
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_43_15_55_8_stop:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_30_8_55_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc" 57 8 ]
+        %tmp.35 = true;
+        ret %tmp.35;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_28_24_58_4_stop:
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc"; @line = 60; @symbol_functiondef = [onBack,60,13,19]; ]
+    function onBack() {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_60_22_62_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc" 61 8 ]
+        %tmp.1 = false;
+        ret %tmp.1;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendDelegate_mc_60_22_62_4_stop:
+    }
+}
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendDelegate.mc"; @line = 1; ]
+<init> {
+}

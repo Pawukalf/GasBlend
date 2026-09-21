@@ -1,0 +1,89 @@
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc"; @line = 1; @symbol_classdef = [GasBlendData,1,6,18]; ]
+class GasBlendData {
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc"; @line = 1; ]
+    <init> {
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc"; @line = 1; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc"; @line = 4; @position = 15; @symbol_vardef = [startO2,4,15,22]; ]
+    static
+    var startO2 = 21;
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc"; @line = 5; @position = 15; @symbol_vardef = [startHe,5,15,22]; ]
+    static
+    var startHe = 0;
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc"; @line = 6; @position = 15; @symbol_vardef = [startPressure,6,15,28]; ]
+    static
+    var startPressure = 100;
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc"; @line = 9; @position = 15; @symbol_vardef = [targetO2,9,15,23]; ]
+    static
+    var targetO2 = 18;
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc"; @line = 10; @position = 15; @symbol_vardef = [targetHe,10,15,23]; ]
+    static
+    var targetHe = 45;
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc"; @line = 11; @position = 15; @symbol_vardef = [finalPressure,11,15,28]; ]
+    static
+    var finalPressure = 230;
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc"; @line = 12; @position = 15; @symbol_vardef = [topupO2,12,15,22]; ]
+    static
+    var topupO2 = 21;
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc"; @line = 15; @position = 15; @symbol_vardef = [drainTo,15,15,22]; ]
+    static
+    var drainTo = 0.0;
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc"; @line = 16; @position = 15; @symbol_vardef = [addO2,16,15,20]; ]
+    static
+    var addO2 = 0.0;
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc"; @line = 17; @position = 15; @symbol_vardef = [addHe,17,15,20]; ]
+    static
+    var addHe = 0.0;
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc"; @line = 18; @position = 15; @symbol_vardef = [addTopup,18,15,23]; ]
+    static
+    var addTopup = 0.0;
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc"; @line = 21; @position = 15; @symbol_vardef = [calculationValid,21,15,31]; ]
+    static
+    var calculationValid = false;
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc"; @line = 22; @position = 15; @symbol_vardef = [requiresDrain,22,15,28]; ]
+    static
+    var requiresDrain = false;
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc"; @line = 23; @position = 15; @symbol_vardef = [errorMessage,23,15,27]; ]
+    static
+    var errorMessage = "";
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc"; @line = 25; @symbol_functiondef = [clearResult,25,20,31]; ]
+    static
+    function clearResult() {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendData_mc_25_34_35_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc" 27 8 ]
+        %tmp.1 = 0.0;
+        symbol [ drainTo ? 27 8 15 ];
+        putv self :drainTo %tmp.1;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc" 28 8 ]
+        %tmp.2 = 0.0;
+        symbol [ addO2 ? 28 8 13 ];
+        putv self :addO2 %tmp.2;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc" 29 8 ]
+        %tmp.3 = 0.0;
+        symbol [ addHe ? 29 8 13 ];
+        putv self :addHe %tmp.3;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc" 30 8 ]
+        %tmp.4 = 0.0;
+        symbol [ addTopup ? 30 8 16 ];
+        putv self :addTopup %tmp.4;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc" 32 8 ]
+        %tmp.5 = false;
+        symbol [ calculationValid ? 32 8 24 ];
+        putv self :calculationValid %tmp.5;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc" 33 8 ]
+        %tmp.6 = false;
+        symbol [ requiresDrain ? 33 8 21 ];
+        putv self :requiresDrain %tmp.6;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc" 34 8 ]
+        %tmp.7 = "";
+        symbol [ errorMessage ? 34 8 20 ];
+        putv self :errorMessage %tmp.7;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendData_mc_25_34_35_4_stop:
+    }
+}
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendData.mc"; @line = 1; ]
+<init> {
+}

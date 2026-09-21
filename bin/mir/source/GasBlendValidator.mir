@@ -1,0 +1,331 @@
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc"; @line = 1; @symbol_classdef = [GasBlendValidator,1,6,23]; ]
+class GasBlendValidator {
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc"; @line = 1; ]
+    <init> {
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc"; @line = 1; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc"; @line = 3; @symbol_functiondef = [validateTopUp,3,20,33]; ]
+    static
+    function validateTopUp() {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_3_36_114_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 5 8 ]
+        symbol [ GasBlendData %tmp.1 5 8 20 ];
+        %tmp.1 = getv self :GasBlendData;
+        %tmp.2 = "";
+        symbol [ errorMessage ? 5 21 33 ];
+        putv %tmp.1 :errorMessage %tmp.2;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 7 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_7_8_13_8_if_stmt:
+        symbol [ GasBlendData %tmp.4 7 12 24 ];
+        %tmp.4 = getv ? :GasBlendData;
+        symbol [ startPressure %tmp.5 7 25 38 ];
+        %tmp.5 = getv %tmp.4 :startPressure;
+        %tmp.6 = 0;
+        %tmp.7 = lt %tmp.5 %tmp.6;
+        bf %tmp.7 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_7_8_13_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_7_8_13_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_7_44_13_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 9 12 ]
+        symbol [ GasBlendData %tmp.8 9 12 24 ];
+        %tmp.8 = getv self :GasBlendData;
+        %tmp.9 = "Check start pressure.";
+        symbol [ errorMessage ? 9 25 37 ];
+        putv %tmp.8 :errorMessage %tmp.9;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 12 12 ]
+        %tmp.10 = false;
+        ret %tmp.10;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_7_44_13_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_7_8_13_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_7_8_13_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 15 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_15_8_21_8_if_stmt:
+        symbol [ GasBlendData %tmp.12 15 12 24 ];
+        %tmp.12 = getv ? :GasBlendData;
+        symbol [ finalPressure %tmp.13 15 25 38 ];
+        %tmp.13 = getv %tmp.12 :finalPressure;
+        %tmp.14 = 0;
+        %tmp.15 = lte %tmp.13 %tmp.14;
+        bf %tmp.15 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_15_8_21_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_15_8_21_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_15_45_21_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 17 12 ]
+        symbol [ GasBlendData %tmp.16 17 12 24 ];
+        %tmp.16 = getv self :GasBlendData;
+        %tmp.17 = "Check final pressure.";
+        symbol [ errorMessage ? 17 25 37 ];
+        putv %tmp.16 :errorMessage %tmp.17;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 20 12 ]
+        %tmp.18 = false;
+        ret %tmp.18;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_15_45_21_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_15_8_21_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_15_8_21_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 23 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_23_8_32_8_if_stmt:
+        symbol [ GasBlendData %tmp.20 24 12 24 ];
+        %tmp.20 = getv ? :GasBlendData;
+        symbol [ startPressure %tmp.21 24 25 38 ];
+        %tmp.21 = getv %tmp.20 :startPressure;
+        symbol [ GasBlendData %tmp.23 25 12 24 ];
+        %tmp.23 = getv ? :GasBlendData;
+        symbol [ finalPressure %tmp.24 25 25 38 ];
+        %tmp.24 = getv %tmp.23 :finalPressure;
+        %tmp.25 = gt %tmp.21 %tmp.24;
+        bf %tmp.25 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_23_8_32_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_23_8_32_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_26_10_32_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 28 12 ]
+        symbol [ GasBlendData %tmp.26 28 12 24 ];
+        %tmp.26 = getv self :GasBlendData;
+        %tmp.27 = "Start bar is above final bar.";
+        symbol [ errorMessage ? 28 25 37 ];
+        putv %tmp.26 :errorMessage %tmp.27;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 31 12 ]
+        %tmp.28 = false;
+        ret %tmp.28;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_26_10_32_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_23_8_32_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_23_8_32_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 34 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_34_8_43_8_if_stmt:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_35_12_36_35_begin:
+        symbol [ GasBlendData %tmp.30 35 12 24 ];
+        %tmp.30 = getv ? :GasBlendData;
+        symbol [ startO2 %tmp.31 35 25 32 ];
+        %tmp.31 = getv %tmp.30 :startO2;
+        %tmp.32 = 0;
+        %tmp.33 = lt %tmp.31 %tmp.32;
+        bt %tmp.33 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_34_8_43_8_if_true;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_36_12_36_35_false:
+        symbol [ GasBlendData %tmp.35 36 12 24 ];
+        %tmp.35 = getv ? :GasBlendData;
+        symbol [ startO2 %tmp.36 36 25 32 ];
+        %tmp.36 = getv %tmp.35 :startO2;
+        %tmp.37 = 100;
+        %tmp.38 = gt %tmp.36 %tmp.37;
+        push %tmp.38;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_36_12_36_35_end:
+        %tmp.39 = phi [%tmp.33 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_35_12_36_35_begin] [%tmp.38 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_36_12_36_35_false] [%tmp.39 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_36_12_36_35_end];
+        bf %tmp.39 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_34_8_43_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_34_8_43_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_37_10_43_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 39 12 ]
+        symbol [ GasBlendData %tmp.40 39 12 24 ];
+        %tmp.40 = getv self :GasBlendData;
+        %tmp.41 = "Check starting O2.";
+        symbol [ errorMessage ? 39 25 37 ];
+        putv %tmp.40 :errorMessage %tmp.41;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 42 12 ]
+        %tmp.42 = false;
+        ret %tmp.42;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_37_10_43_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_34_8_43_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_34_8_43_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 45 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_45_8_54_8_if_stmt:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_46_12_47_35_begin:
+        symbol [ GasBlendData %tmp.44 46 12 24 ];
+        %tmp.44 = getv ? :GasBlendData;
+        symbol [ startHe %tmp.45 46 25 32 ];
+        %tmp.45 = getv %tmp.44 :startHe;
+        %tmp.46 = 0;
+        %tmp.47 = lt %tmp.45 %tmp.46;
+        bt %tmp.47 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_45_8_54_8_if_true;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_47_12_47_35_false:
+        symbol [ GasBlendData %tmp.49 47 12 24 ];
+        %tmp.49 = getv ? :GasBlendData;
+        symbol [ startHe %tmp.50 47 25 32 ];
+        %tmp.50 = getv %tmp.49 :startHe;
+        %tmp.51 = 100;
+        %tmp.52 = gt %tmp.50 %tmp.51;
+        push %tmp.52;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_47_12_47_35_end:
+        %tmp.53 = phi [%tmp.47 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_46_12_47_35_begin] [%tmp.52 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_47_12_47_35_false] [%tmp.53 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_47_12_47_35_end];
+        bf %tmp.53 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_45_8_54_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_45_8_54_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_48_10_54_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 50 12 ]
+        symbol [ GasBlendData %tmp.54 50 12 24 ];
+        %tmp.54 = getv self :GasBlendData;
+        %tmp.55 = "Check starting He.";
+        symbol [ errorMessage ? 50 25 37 ];
+        putv %tmp.54 :errorMessage %tmp.55;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 53 12 ]
+        %tmp.56 = false;
+        ret %tmp.56;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_48_10_54_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_45_8_54_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_45_8_54_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 56 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_56_8_66_8_if_stmt:
+        symbol [ GasBlendData %tmp.58 57 12 24 ];
+        %tmp.58 = getv ? :GasBlendData;
+        symbol [ startO2 %tmp.59 57 25 32 ];
+        %tmp.59 = getv %tmp.58 :startO2;
+        symbol [ GasBlendData %tmp.61 58 12 24 ];
+        %tmp.61 = getv ? :GasBlendData;
+        symbol [ startHe %tmp.62 58 25 32 ];
+        %tmp.62 = getv %tmp.61 :startHe;
+        %tmp.63 = add %tmp.59 %tmp.62;
+        %tmp.64 = 100;
+        %tmp.65 = gt %tmp.63 %tmp.64;
+        bf %tmp.65 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_56_8_66_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_56_8_66_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_60_10_66_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 62 12 ]
+        symbol [ GasBlendData %tmp.66 62 12 24 ];
+        %tmp.66 = getv self :GasBlendData;
+        %tmp.67 = "Starting O2 + He exceeds 100%.";
+        symbol [ errorMessage ? 62 25 37 ];
+        putv %tmp.66 :errorMessage %tmp.67;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 65 12 ]
+        %tmp.68 = false;
+        ret %tmp.68;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_60_10_66_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_56_8_66_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_56_8_66_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 68 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_68_8_77_8_if_stmt:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_69_12_70_36_begin:
+        symbol [ GasBlendData %tmp.70 69 12 24 ];
+        %tmp.70 = getv ? :GasBlendData;
+        symbol [ targetO2 %tmp.71 69 25 33 ];
+        %tmp.71 = getv %tmp.70 :targetO2;
+        %tmp.72 = 0;
+        %tmp.73 = lt %tmp.71 %tmp.72;
+        bt %tmp.73 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_68_8_77_8_if_true;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_70_12_70_36_false:
+        symbol [ GasBlendData %tmp.75 70 12 24 ];
+        %tmp.75 = getv ? :GasBlendData;
+        symbol [ targetO2 %tmp.76 70 25 33 ];
+        %tmp.76 = getv %tmp.75 :targetO2;
+        %tmp.77 = 100;
+        %tmp.78 = gt %tmp.76 %tmp.77;
+        push %tmp.78;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_70_12_70_36_end:
+        %tmp.79 = phi [%tmp.73 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_69_12_70_36_begin] [%tmp.78 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_70_12_70_36_false] [%tmp.79 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_70_12_70_36_end];
+        bf %tmp.79 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_68_8_77_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_68_8_77_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_71_10_77_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 73 12 ]
+        symbol [ GasBlendData %tmp.80 73 12 24 ];
+        %tmp.80 = getv self :GasBlendData;
+        %tmp.81 = "Check target O2.";
+        symbol [ errorMessage ? 73 25 37 ];
+        putv %tmp.80 :errorMessage %tmp.81;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 76 12 ]
+        %tmp.82 = false;
+        ret %tmp.82;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_71_10_77_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_68_8_77_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_68_8_77_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 79 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_79_8_88_8_if_stmt:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_80_12_81_36_begin:
+        symbol [ GasBlendData %tmp.84 80 12 24 ];
+        %tmp.84 = getv ? :GasBlendData;
+        symbol [ targetHe %tmp.85 80 25 33 ];
+        %tmp.85 = getv %tmp.84 :targetHe;
+        %tmp.86 = 0;
+        %tmp.87 = lt %tmp.85 %tmp.86;
+        bt %tmp.87 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_79_8_88_8_if_true;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_81_12_81_36_false:
+        symbol [ GasBlendData %tmp.89 81 12 24 ];
+        %tmp.89 = getv ? :GasBlendData;
+        symbol [ targetHe %tmp.90 81 25 33 ];
+        %tmp.90 = getv %tmp.89 :targetHe;
+        %tmp.91 = 100;
+        %tmp.92 = gt %tmp.90 %tmp.91;
+        push %tmp.92;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_81_12_81_36_end:
+        %tmp.93 = phi [%tmp.87 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_80_12_81_36_begin] [%tmp.92 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_81_12_81_36_false] [%tmp.93 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_81_12_81_36_end];
+        bf %tmp.93 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_79_8_88_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_79_8_88_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_82_10_88_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 84 12 ]
+        symbol [ GasBlendData %tmp.94 84 12 24 ];
+        %tmp.94 = getv self :GasBlendData;
+        %tmp.95 = "Check target He.";
+        symbol [ errorMessage ? 84 25 37 ];
+        putv %tmp.94 :errorMessage %tmp.95;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 87 12 ]
+        %tmp.96 = false;
+        ret %tmp.96;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_82_10_88_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_79_8_88_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_79_8_88_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 90 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_90_8_100_8_if_stmt:
+        symbol [ GasBlendData %tmp.98 91 12 24 ];
+        %tmp.98 = getv ? :GasBlendData;
+        symbol [ targetO2 %tmp.99 91 25 33 ];
+        %tmp.99 = getv %tmp.98 :targetO2;
+        symbol [ GasBlendData %tmp.101 92 12 24 ];
+        %tmp.101 = getv ? :GasBlendData;
+        symbol [ targetHe %tmp.102 92 25 33 ];
+        %tmp.102 = getv %tmp.101 :targetHe;
+        %tmp.103 = add %tmp.99 %tmp.102;
+        %tmp.104 = 100;
+        %tmp.105 = gt %tmp.103 %tmp.104;
+        bf %tmp.105 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_90_8_100_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_90_8_100_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_94_10_100_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 96 12 ]
+        symbol [ GasBlendData %tmp.106 96 12 24 ];
+        %tmp.106 = getv self :GasBlendData;
+        %tmp.107 = "Target O2 + He exceeds 100%.";
+        symbol [ errorMessage ? 96 25 37 ];
+        putv %tmp.106 :errorMessage %tmp.107;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 99 12 ]
+        %tmp.108 = false;
+        ret %tmp.108;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_94_10_100_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_90_8_100_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_90_8_100_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 102 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_102_8_111_8_if_stmt:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_103_12_104_36_begin:
+        symbol [ GasBlendData %tmp.110 103 12 24 ];
+        %tmp.110 = getv ? :GasBlendData;
+        symbol [ topupO2 %tmp.111 103 25 32 ];
+        %tmp.111 = getv %tmp.110 :topupO2;
+        %tmp.112 = 0;
+        %tmp.113 = lt %tmp.111 %tmp.112;
+        bt %tmp.113 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_102_8_111_8_if_true;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_104_12_104_36_false:
+        symbol [ GasBlendData %tmp.115 104 12 24 ];
+        %tmp.115 = getv ? :GasBlendData;
+        symbol [ topupO2 %tmp.116 104 25 32 ];
+        %tmp.116 = getv %tmp.115 :topupO2;
+        %tmp.117 = 100;
+        %tmp.118 = gte %tmp.116 %tmp.117;
+        push %tmp.118;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_104_12_104_36_end:
+        %tmp.119 = phi [%tmp.113 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_103_12_104_36_begin] [%tmp.118 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_104_12_104_36_false] [%tmp.119 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_104_12_104_36_end];
+        bf %tmp.119 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_102_8_111_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_102_8_111_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_105_10_111_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 107 12 ]
+        symbol [ GasBlendData %tmp.120 107 12 24 ];
+        %tmp.120 = getv self :GasBlendData;
+        %tmp.121 = "Top-up O2 must be below 100%.";
+        symbol [ errorMessage ? 107 25 37 ];
+        putv %tmp.120 :errorMessage %tmp.121;
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 110 12 ]
+        %tmp.122 = false;
+        ret %tmp.122;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_105_10_111_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_102_8_111_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_102_8_111_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc" 113 8 ]
+        %tmp.123 = true;
+        ret %tmp.123;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendValidator_mc_3_36_114_4_stop:
+    }
+}
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendValidator.mc"; @line = 1; ]
+<init> {
+}

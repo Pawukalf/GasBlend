@@ -1,0 +1,150 @@
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\TestResultView.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [Graphics,1,13,21]; @symbol_usingAlias = [Gfx,1,25,28]; ]
+using Toybox.Graphics as :Gfx;
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\TestResultView.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [WatchUi,2,13,20]; @symbol_usingAlias = [Ui,2,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\TestResultView.mc"; @line = 4; @symbol_classdef = [TestResultView,4,6,20]; @symbol_extends<0> = [Ui,4,29,31]; @symbol_extends<1> = [View,4,32,36]; ]
+class TestResultView extends Ui.View {
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\TestResultView.mc"; @line = 4; ]
+    <init> {
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\TestResultView.mc"; @line = 4; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\TestResultView.mc"; @line = 6; @symbol_functiondef = [initialize,6,13,23]; ]
+    function initialize() as Void {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_TestResultView_mc_6_26_8_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\TestResultView.mc" 7 8 ]
+        symbol [ View %tmp.2 7 8 12 ];
+        %tmp.2 = getv ? :View;
+        symbol [ initialize %tmp.3 7 13 23 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_TestResultView_mc_6_26_8_4_stop:
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\TestResultView.mc"; @line = 10; @symbol_functiondef = [onUpdate,10,13,21]; @symbol_param<0> = [dc,10,22,24]; ]
+    function onUpdate(dc) {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_TestResultView_mc_10_26_45_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\TestResultView.mc" 12 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_TestResultView_mc_10_26_45_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_TestResultView_mc_10_26_45_4_stop" ]
+        %w.1 = local;
+        symbol [ w %w.1 12 12 13 ];
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 12 16 18 ];
+        symbol [ getWidth %tmp.2 12 19 27 ];
+        %tmp.2 = getv function %tmp.1 :getWidth;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %w.1 %tmp.3;
+        symbol [ w %w.1 12 12 13 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\TestResultView.mc" 13 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_TestResultView_mc_10_26_45_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_TestResultView_mc_10_26_45_4_stop" ]
+        %h.2 = local;
+        symbol [ h %h.2 13 12 13 ];
+        %tmp.4 = lgetv %dc;
+        symbol [ dc %tmp.4 13 16 18 ];
+        symbol [ getHeight %tmp.5 13 19 28 ];
+        %tmp.5 = getv function %tmp.4 :getHeight;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %h.2 %tmp.6;
+        symbol [ h %h.2 13 12 13 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\TestResultView.mc" 15 8 ]
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 15 8 10 ];
+        symbol [ setColor %tmp.8 15 11 19 ];
+        %tmp.8 = getv function %tmp.7 :setColor;
+        symbol [ Gfx %tmp.9 16 12 15 ];
+        %tmp.9 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.10 16 16 27 ];
+        %tmp.10 = getv %tmp.9 :COLOR_WHITE;
+        symbol [ Gfx %tmp.11 17 12 15 ];
+        %tmp.11 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.12 17 16 27 ];
+        %tmp.12 = getv %tmp.11 :COLOR_BLACK;
+        invoke %tmp.7 %tmp.8(%tmp.10, %tmp.12);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\TestResultView.mc" 20 8 ]
+        %tmp.13 = lgetv %dc;
+        symbol [ dc %tmp.13 20 8 10 ];
+        symbol [ clear %tmp.14 20 11 16 ];
+        %tmp.14 = getv function %tmp.13 :clear;
+        invoke %tmp.13 %tmp.14();
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\TestResultView.mc" 22 8 ]
+        %tmp.15 = lgetv %dc;
+        symbol [ dc %tmp.15 22 8 10 ];
+        symbol [ drawText %tmp.16 22 11 19 ];
+        %tmp.16 = getv function %tmp.15 :drawText;
+        %tmp.17 = lgetv %w.1;
+        symbol [ w %tmp.17 23 12 13 ];
+        %tmp.18 = 2;
+        %tmp.19 = div %tmp.17 %tmp.18;
+        %tmp.20 = lgetv %h.2;
+        symbol [ h %tmp.20 24 12 13 ];
+        %tmp.21 = 25;
+        %tmp.22 = mul %tmp.20 %tmp.21;
+        %tmp.23 = 100;
+        %tmp.24 = div %tmp.22 %tmp.23;
+        symbol [ Gfx %tmp.25 25 12 15 ];
+        %tmp.25 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.26 25 16 26 ];
+        %tmp.26 = getv %tmp.25 :FONT_LARGE;
+        %tmp.27 = "RESULT";
+        symbol [ Gfx %tmp.28 27 12 15 ];
+        %tmp.28 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.29 27 16 35 ];
+        %tmp.29 = getv %tmp.28 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.15 %tmp.16(%tmp.19, %tmp.24, %tmp.26, %tmp.27, %tmp.29);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\TestResultView.mc" 30 8 ]
+        %tmp.30 = lgetv %dc;
+        symbol [ dc %tmp.30 30 8 10 ];
+        symbol [ drawText %tmp.31 30 11 19 ];
+        %tmp.31 = getv function %tmp.30 :drawText;
+        %tmp.32 = lgetv %w.1;
+        symbol [ w %tmp.32 31 12 13 ];
+        %tmp.33 = 2;
+        %tmp.34 = div %tmp.32 %tmp.33;
+        %tmp.35 = lgetv %h.2;
+        symbol [ h %tmp.35 32 12 13 ];
+        %tmp.36 = 45;
+        %tmp.37 = mul %tmp.35 %tmp.36;
+        %tmp.38 = 100;
+        %tmp.39 = div %tmp.37 %tmp.38;
+        symbol [ Gfx %tmp.40 33 12 15 ];
+        %tmp.40 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.41 33 16 26 ];
+        %tmp.41 = getv %tmp.40 :FONT_SMALL;
+        %tmp.42 = "CALC BUTTON WORKS";
+        symbol [ Gfx %tmp.43 35 12 15 ];
+        %tmp.43 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.44 35 16 35 ];
+        %tmp.44 = getv %tmp.43 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.30 %tmp.31(%tmp.34, %tmp.39, %tmp.41, %tmp.42, %tmp.44);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\TestResultView.mc" 38 8 ]
+        %tmp.45 = lgetv %dc;
+        symbol [ dc %tmp.45 38 8 10 ];
+        symbol [ drawText %tmp.46 38 11 19 ];
+        %tmp.46 = getv function %tmp.45 :drawText;
+        %tmp.47 = lgetv %w.1;
+        symbol [ w %tmp.47 39 12 13 ];
+        %tmp.48 = 2;
+        %tmp.49 = div %tmp.47 %tmp.48;
+        %tmp.50 = lgetv %h.2;
+        symbol [ h %tmp.50 40 12 13 ];
+        %tmp.51 = 65;
+        %tmp.52 = mul %tmp.50 %tmp.51;
+        %tmp.53 = 100;
+        %tmp.54 = div %tmp.52 %tmp.53;
+        symbol [ Gfx %tmp.55 41 12 15 ];
+        %tmp.55 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.56 41 16 26 ];
+        %tmp.56 = getv %tmp.55 :FONT_XTINY;
+        %tmp.57 = "BACK TO RETURN";
+        symbol [ Gfx %tmp.58 43 12 15 ];
+        %tmp.58 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.59 43 16 35 ];
+        %tmp.59 = getv %tmp.58 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.45 %tmp.46(%tmp.49, %tmp.54, %tmp.56, %tmp.57, %tmp.59);
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_TestResultView_mc_10_26_45_4_stop:
+    }
+}
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\TestResultView.mc"; @line = 1; ]
+<init> {
+}

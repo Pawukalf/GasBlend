@@ -1,0 +1,1839 @@
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Lang,1,14,18]; ]
+import Toybox.Lang;
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Math,2,14,18]; ]
+import Toybox.Math;
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc"; @line = 4; @symbol_moduledef = [GasCalculator,4,7,20]; ]
+module GasCalculator {
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc"; @line = 4; ]
+    <init> {
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc"; @line = 6; @symbol_enumdef = [Mode,6,9,13]; ]
+    enum Mode {
+        [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc"; @line = 7; @position = 8; @symbol_enumdec = [MODE_TOP,7,8,16]; ]
+        MODE_TOP,
+        [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc"; @line = 8; @position = 8; @symbol_enumdec = [MODE_EMPTY,8,8,18]; ]
+        MODE_EMPTY
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc"; @line = 18; @symbol_functiondef = [asFloat,18,13,20]; @symbol_param<0> = [x,18,21,22]; @symbol_param<0>_type<0> = [Numeric,18,26,33]; @symbol_return<0> = [Float,18,38,43]; ]
+    function asFloat(x as Numeric) as Float {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_18_44_20_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 19 8 ]
+        %tmp.1 = lgetv %x;
+        symbol [ x %tmp.1 19 15 16 ];
+        symbol [ toFloat %tmp.2 19 17 24 ];
+        %tmp.2 = getv function %tmp.1 :toFloat;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        ret %tmp.3;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_18_44_20_4_stop:
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc"; @line = 22; @symbol_functiondef = [clampPct,22,13,21]; @symbol_param<0> = [x,22,22,23]; @symbol_param<0>_type<0> = [Numeric,22,27,34]; @symbol_return<0> = [Float,22,39,44]; ]
+    function clampPct(x as Numeric) as Float {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_22_45_32_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 23 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_22_45_32_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_22_45_32_4_stop" ]
+        %val.1 = local;
+        symbol [ val %val.1 23 12 15 ];
+        %tmp.1 = self;
+        symbol [ asFloat %tmp.2 23 18 25 ];
+        %tmp.2 = getv function %tmp.1 :asFloat;
+        %tmp.3 = lgetv %x;
+        symbol [ x %tmp.3 23 26 27 ];
+        %tmp.4 = invoke %tmp.1 %tmp.2(%tmp.3);
+        lputv %val.1 %tmp.4;
+        symbol [ val %val.1 23 12 15 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 25 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_25_8_27_8_if_stmt:
+        %tmp.5 = lgetv %val.1;
+        symbol [ val %tmp.5 25 12 15 ];
+        %tmp.6 = 0.0;
+        %tmp.7 = lt %tmp.5 %tmp.6;
+        bf %tmp.7 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_25_8_27_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_25_8_27_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_25_23_27_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 26 12 ]
+        %tmp.8 = 0.0;
+        ret %tmp.8;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_25_23_27_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_25_8_27_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_25_8_27_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 28 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_28_8_30_8_if_stmt:
+        %tmp.9 = lgetv %val.1;
+        symbol [ val %tmp.9 28 12 15 ];
+        %tmp.10 = 100.0;
+        %tmp.11 = gt %tmp.9 %tmp.10;
+        bf %tmp.11 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_28_8_30_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_28_8_30_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_28_25_30_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 29 12 ]
+        %tmp.12 = 100.0;
+        ret %tmp.12;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_28_25_30_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_28_8_30_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_28_8_30_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 31 8 ]
+        %tmp.13 = lgetv %val.1;
+        symbol [ val %tmp.13 31 15 18 ];
+        ret %tmp.13;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_22_45_32_4_stop:
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc"; @line = 34; @symbol_functiondef = [frac,34,13,17]; @symbol_param<0> = [p,34,18,19]; @symbol_param<0>_type<0> = [Numeric,34,23,30]; @symbol_return<0> = [Float,34,35,40]; ]
+    function frac(p as Numeric) as Float {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_34_41_37_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 36 8 ]
+        %tmp.1 = self;
+        symbol [ clampPct %tmp.2 36 15 23 ];
+        %tmp.2 = getv function %tmp.1 :clampPct;
+        %tmp.3 = lgetv %p;
+        symbol [ p %tmp.3 36 24 25 ];
+        %tmp.4 = invoke %tmp.1 %tmp.2(%tmp.3);
+        %tmp.5 = 100.0;
+        %tmp.6 = div %tmp.4 %tmp.5;
+        ret %tmp.6;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_34_41_37_4_stop:
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc"; @line = 39; @symbol_functiondef = [cleanBar,39,13,21]; @symbol_param<0> = [x,39,22,23]; @symbol_param<0>_type<0> = [Numeric,39,27,34]; @symbol_return<0> = [Float,39,39,44]; ]
+    function cleanBar(x as Numeric) as Float {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_39_45_42_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 40 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_39_45_42_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_39_45_42_4_stop" ]
+        %value.1 = local;
+        symbol [ value %value.1 40 12 17 ];
+        %tmp.1 = self;
+        symbol [ asFloat %tmp.2 40 20 27 ];
+        %tmp.2 = getv function %tmp.1 :asFloat;
+        %tmp.3 = lgetv %x;
+        symbol [ x %tmp.3 40 28 29 ];
+        %tmp.4 = invoke %tmp.1 %tmp.2(%tmp.3);
+        lputv %value.1 %tmp.4;
+        symbol [ value %value.1 40 12 17 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 41 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_41_15_41_44_begin:
+        %tmp.5 = lgetv %value.1;
+        symbol [ value %tmp.5 41 16 21 ];
+        symbol [ abs %tmp.6 41 22 25 ];
+        %tmp.6 = getv function %tmp.5 :abs;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        %tmp.8 = 0.05;
+        %tmp.9 = lt %tmp.7 %tmp.8;
+        bf %tmp.9 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_41_15_41_44_else_false;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_41_15_41_44_true:
+        %tmp.10 = 0.0;
+        push %tmp.10;
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_41_15_41_44_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_41_15_41_44_else_false:
+        %tmp.11 = lgetv %value.1;
+        symbol [ value %tmp.11 41 44 49 ];
+        push %tmp.11;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_41_15_41_44_end:
+        %tmp.12 = phi [%tmp.9 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_41_15_41_44_begin] [%tmp.10 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_41_15_41_44_true] [%tmp.11 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_41_15_41_44_else_false] [%tmp.12 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_41_15_41_44_end];
+        ret %tmp.12;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_39_45_42_4_stop:
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc"; @line = 44; @symbol_functiondef = [fmtBar,44,13,19]; @symbol_param<0> = [x,44,20,21]; @symbol_param<0>_type<0> = [Numeric,44,25,32]; @symbol_return<0> = [String,44,37,43]; ]
+    function fmtBar(x as Numeric) as String {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_44_44_46_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 45 8 ]
+        %tmp.1 = self;
+        symbol [ cleanBar %tmp.2 45 15 23 ];
+        %tmp.2 = getv function %tmp.1 :cleanBar;
+        %tmp.3 = lgetv %x;
+        symbol [ x %tmp.3 45 24 25 ];
+        %tmp.4 = invoke %tmp.1 %tmp.2(%tmp.3);
+        symbol [ format %tmp.5 45 27 33 ];
+        %tmp.5 = getv function %tmp.4 :format;
+        %tmp.6 = "%.1f";
+        %tmp.7 = invoke %tmp.4 %tmp.5(%tmp.6);
+        ret %tmp.7;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_44_44_46_4_stop:
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc"; @line = 48; @symbol_functiondef = [roundToNumber,48,13,26]; @symbol_param<0> = [x,48,27,28]; @symbol_param<0>_type<0> = [Numeric,48,32,39]; @symbol_return<0> = [Number,48,44,50]; ]
+    function roundToNumber(x as Numeric) as Number {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_48_51_51_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 50 8 ]
+        symbol [ Math %tmp.1 50 15 19 ];
+        %tmp.1 = getm $.Toybox.Math;
+        symbol [ round %tmp.2 50 20 25 ];
+        %tmp.2 = getv function %tmp.1 :round;
+        %tmp.3 = lgetv %x;
+        symbol [ x %tmp.3 50 26 27 ];
+        %tmp.4 = invoke %tmp.1 %tmp.2(%tmp.3);
+        symbol [ toNumber %tmp.5 50 29 37 ];
+        %tmp.5 = getv function %tmp.4 :toNumber;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        ret %tmp.6;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_48_51_51_4_stop:
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc"; @line = 56; @symbol_functiondef = [calcAdditions,56,13,26]; @symbol_param<0> = [PsIn,57,8,12]; @symbol_param<0>_type<0> = [Numeric,57,16,23]; @symbol_param<1> = [sO2In,58,8,13]; @symbol_param<1>_type<0> = [Numeric,58,17,24]; @symbol_param<2> = [sHeIn,59,8,13]; @symbol_param<2>_type<0> = [Numeric,59,17,24]; @symbol_param<3> = [PfIn,60,8,12]; @symbol_param<3>_type<0> = [Numeric,60,16,23]; @symbol_param<4> = [tO2In,61,8,13]; @symbol_param<4>_type<0> = [Numeric,61,17,24]; @symbol_param<5> = [tHeIn,62,8,13]; @symbol_param<5>_type<0> = [Numeric,62,17,24]; @symbol_param<6> = [FtopIn,63,8,14]; @symbol_param<6>_type<0> = [Numeric,63,18,25]; @symbol_return<0> = [Dictionary,64,9,19]; ]
+    function calcAdditions(PsIn as Numeric, sO2In as Numeric, sHeIn as Numeric, PfIn as Numeric, tO2In as Numeric, tHeIn as Numeric, FtopIn as Numeric) as Dictionary {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 66 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_stop" ]
+        %Ps.1 = local;
+        symbol [ Ps %Ps.1 66 12 14 ];
+        %tmp.1 = self;
+        symbol [ asFloat %tmp.2 66 17 24 ];
+        %tmp.2 = getv function %tmp.1 :asFloat;
+        %tmp.3 = lgetv %PsIn;
+        symbol [ PsIn %tmp.3 66 25 29 ];
+        %tmp.4 = invoke %tmp.1 %tmp.2(%tmp.3);
+        lputv %Ps.1 %tmp.4;
+        symbol [ Ps %Ps.1 66 12 14 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 67 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_stop" ]
+        %sO2.2 = local;
+        symbol [ sO2 %sO2.2 67 12 15 ];
+        %tmp.5 = self;
+        symbol [ asFloat %tmp.6 67 18 25 ];
+        %tmp.6 = getv function %tmp.5 :asFloat;
+        %tmp.7 = lgetv %sO2In;
+        symbol [ sO2In %tmp.7 67 26 31 ];
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        lputv %sO2.2 %tmp.8;
+        symbol [ sO2 %sO2.2 67 12 15 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 68 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_stop" ]
+        %sHe.3 = local;
+        symbol [ sHe %sHe.3 68 12 15 ];
+        %tmp.9 = self;
+        symbol [ asFloat %tmp.10 68 18 25 ];
+        %tmp.10 = getv function %tmp.9 :asFloat;
+        %tmp.11 = lgetv %sHeIn;
+        symbol [ sHeIn %tmp.11 68 26 31 ];
+        %tmp.12 = invoke %tmp.9 %tmp.10(%tmp.11);
+        lputv %sHe.3 %tmp.12;
+        symbol [ sHe %sHe.3 68 12 15 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 69 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_stop" ]
+        %Pf.4 = local;
+        symbol [ Pf %Pf.4 69 12 14 ];
+        %tmp.13 = self;
+        symbol [ asFloat %tmp.14 69 17 24 ];
+        %tmp.14 = getv function %tmp.13 :asFloat;
+        %tmp.15 = lgetv %PfIn;
+        symbol [ PfIn %tmp.15 69 25 29 ];
+        %tmp.16 = invoke %tmp.13 %tmp.14(%tmp.15);
+        lputv %Pf.4 %tmp.16;
+        symbol [ Pf %Pf.4 69 12 14 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 70 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_stop" ]
+        %tO2.5 = local;
+        symbol [ tO2 %tO2.5 70 12 15 ];
+        %tmp.17 = self;
+        symbol [ asFloat %tmp.18 70 18 25 ];
+        %tmp.18 = getv function %tmp.17 :asFloat;
+        %tmp.19 = lgetv %tO2In;
+        symbol [ tO2In %tmp.19 70 26 31 ];
+        %tmp.20 = invoke %tmp.17 %tmp.18(%tmp.19);
+        lputv %tO2.5 %tmp.20;
+        symbol [ tO2 %tO2.5 70 12 15 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 71 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_stop" ]
+        %tHe.6 = local;
+        symbol [ tHe %tHe.6 71 12 15 ];
+        %tmp.21 = self;
+        symbol [ asFloat %tmp.22 71 18 25 ];
+        %tmp.22 = getv function %tmp.21 :asFloat;
+        %tmp.23 = lgetv %tHeIn;
+        symbol [ tHeIn %tmp.23 71 26 31 ];
+        %tmp.24 = invoke %tmp.21 %tmp.22(%tmp.23);
+        lputv %tHe.6 %tmp.24;
+        symbol [ tHe %tHe.6 71 12 15 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 72 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_stop" ]
+        %Ftop.7 = local;
+        symbol [ Ftop %Ftop.7 72 12 16 ];
+        %tmp.25 = self;
+        symbol [ asFloat %tmp.26 72 19 26 ];
+        %tmp.26 = getv function %tmp.25 :asFloat;
+        %tmp.27 = lgetv %FtopIn;
+        symbol [ FtopIn %tmp.27 72 27 33 ];
+        %tmp.28 = invoke %tmp.25 %tmp.26(%tmp.27);
+        lputv %Ftop.7 %tmp.28;
+        symbol [ Ftop %Ftop.7 72 12 16 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 74 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_stop" ]
+        %addHe.8 = local;
+        symbol [ addHe %addHe.8 74 12 17 ];
+        %tmp.29 = lgetv %Pf.4;
+        symbol [ Pf %tmp.29 74 21 23 ];
+        %tmp.30 = lgetv %tHe.6;
+        symbol [ tHe %tmp.30 74 26 29 ];
+        %tmp.31 = mul %tmp.29 %tmp.30;
+        %tmp.32 = lgetv %Ps.1;
+        symbol [ Ps %tmp.32 74 34 36 ];
+        %tmp.33 = lgetv %sHe.3;
+        symbol [ sHe %tmp.33 74 39 42 ];
+        %tmp.34 = mul %tmp.32 %tmp.33;
+        %tmp.35 = sub %tmp.31 %tmp.34;
+        lputv %addHe.8 %tmp.35;
+        symbol [ addHe %addHe.8 74 12 17 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 75 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_stop" ]
+        %denom.9 = local;
+        symbol [ denom %denom.9 75 12 17 ];
+        %tmp.36 = 1.0;
+        %tmp.37 = lgetv %Ftop.7;
+        symbol [ Ftop %tmp.37 75 26 30 ];
+        %tmp.38 = sub %tmp.36 %tmp.37;
+        lputv %denom.9 %tmp.38;
+        symbol [ denom %denom.9 75 12 17 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 76 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_stop" ]
+        %num.10 = local;
+        symbol [ num %num.10 76 12 15 ];
+        %tmp.39 = lgetv %Pf.4;
+        symbol [ Pf %tmp.39 76 19 21 ];
+        %tmp.40 = lgetv %tO2.5;
+        symbol [ tO2 %tmp.40 76 25 28 ];
+        %tmp.41 = lgetv %Ftop.7;
+        symbol [ Ftop %tmp.41 76 31 35 ];
+        %tmp.42 = 1.0;
+        %tmp.43 = lgetv %tHe.6;
+        symbol [ tHe %tmp.43 76 45 48 ];
+        %tmp.44 = sub %tmp.42 %tmp.43;
+        %tmp.45 = mul %tmp.41 %tmp.44;
+        %tmp.46 = sub %tmp.40 %tmp.45;
+        %tmp.47 = mul %tmp.39 %tmp.46;
+        %tmp.48 = lgetv %Ps.1;
+        symbol [ Ps %tmp.48 77 19 21 ];
+        %tmp.49 = lgetv %sO2.2;
+        symbol [ sO2 %tmp.49 77 25 28 ];
+        %tmp.50 = lgetv %Ftop.7;
+        symbol [ Ftop %tmp.50 77 31 35 ];
+        %tmp.51 = sub %tmp.49 %tmp.50;
+        %tmp.52 = lgetv %Ftop.7;
+        symbol [ Ftop %tmp.52 77 38 42 ];
+        %tmp.53 = lgetv %sHe.3;
+        symbol [ sHe %tmp.53 77 45 48 ];
+        %tmp.54 = mul %tmp.52 %tmp.53;
+        %tmp.55 = add %tmp.51 %tmp.54;
+        %tmp.56 = mul %tmp.48 %tmp.55;
+        %tmp.57 = sub %tmp.47 %tmp.56;
+        lputv %num.10 %tmp.57;
+        symbol [ num %num.10 76 12 15 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 78 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_stop" ]
+        %addO2.11 = local;
+        symbol [ addO2 %addO2.11 78 12 17 ];
+        %tmp.58 = lgetv %num.10;
+        symbol [ num %tmp.58 78 20 23 ];
+        %tmp.59 = lgetv %denom.9;
+        symbol [ denom %tmp.59 78 26 31 ];
+        %tmp.60 = div %tmp.58 %tmp.59;
+        lputv %addO2.11 %tmp.60;
+        symbol [ addO2 %addO2.11 78 12 17 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 79 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_stop" ]
+        %addTop.12 = local;
+        symbol [ addTop %addTop.12 79 12 18 ];
+        %tmp.61 = lgetv %Pf.4;
+        symbol [ Pf %tmp.61 79 21 23 ];
+        %tmp.62 = lgetv %Ps.1;
+        symbol [ Ps %tmp.62 79 26 28 ];
+        %tmp.63 = sub %tmp.61 %tmp.62;
+        %tmp.64 = lgetv %addHe.8;
+        symbol [ addHe %tmp.64 79 31 36 ];
+        %tmp.65 = sub %tmp.63 %tmp.64;
+        %tmp.66 = lgetv %addO2.11;
+        symbol [ addO2 %tmp.66 79 39 44 ];
+        %tmp.67 = sub %tmp.65 %tmp.66;
+        lputv %addTop.12 %tmp.67;
+        symbol [ addTop %addTop.12 79 12 18 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 81 8 ]
+        %tmp.68 = newd 3;
+        %tmp.69 = "addHe";
+        %tmp.70 = lgetv %addHe.8;
+        symbol [ addHe %tmp.70 82 23 28 ];
+        %tmp.71 = dup %tmp.68;
+        %tmp.72 = aputv %tmp.71 %tmp.69 %tmp.70;
+        %tmp.73 = "addO2";
+        %tmp.74 = lgetv %addO2.11;
+        symbol [ addO2 %tmp.74 83 23 28 ];
+        %tmp.75 = dup %tmp.72;
+        %tmp.76 = aputv %tmp.75 %tmp.73 %tmp.74;
+        %tmp.77 = "addTop";
+        %tmp.78 = lgetv %addTop.12;
+        symbol [ addTop %tmp.78 84 24 30 ];
+        %tmp.79 = dup %tmp.76;
+        %tmp.80 = aputv %tmp.79 %tmp.77 %tmp.78;
+        ret %tmp.80;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_64_20_86_4_stop:
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc"; @line = 91; @symbol_functiondef = [findDrain,91,13,22]; @symbol_param<0> = [PsIn,92,8,12]; @symbol_param<0>_type<0> = [Numeric,92,16,23]; @symbol_param<1> = [sO2In,93,8,13]; @symbol_param<1>_type<0> = [Numeric,93,17,24]; @symbol_param<2> = [sHeIn,94,8,13]; @symbol_param<2>_type<0> = [Numeric,94,17,24]; @symbol_param<3> = [PfIn,95,8,12]; @symbol_param<3>_type<0> = [Numeric,95,16,23]; @symbol_param<4> = [tO2In,96,8,13]; @symbol_param<4>_type<0> = [Numeric,96,17,24]; @symbol_param<5> = [tHeIn,97,8,13]; @symbol_param<5>_type<0> = [Numeric,97,17,24]; @symbol_param<6> = [FtopIn,98,8,14]; @symbol_param<6>_type<0> = [Numeric,98,18,25]; @symbol_return<0> = [Float,99,9,14]; ]
+    function findDrain(PsIn as Numeric, sO2In as Numeric, sHeIn as Numeric, PfIn as Numeric, tO2In as Numeric, tHeIn as Numeric, FtopIn as Numeric) as Float or Null {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 101 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_stop" ]
+        %Ps.1 = local;
+        symbol [ Ps %Ps.1 101 12 14 ];
+        %tmp.1 = self;
+        symbol [ asFloat %tmp.2 101 17 24 ];
+        %tmp.2 = getv function %tmp.1 :asFloat;
+        %tmp.3 = lgetv %PsIn;
+        symbol [ PsIn %tmp.3 101 25 29 ];
+        %tmp.4 = invoke %tmp.1 %tmp.2(%tmp.3);
+        lputv %Ps.1 %tmp.4;
+        symbol [ Ps %Ps.1 101 12 14 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 102 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_stop" ]
+        %sO2.2 = local;
+        symbol [ sO2 %sO2.2 102 12 15 ];
+        %tmp.5 = self;
+        symbol [ asFloat %tmp.6 102 18 25 ];
+        %tmp.6 = getv function %tmp.5 :asFloat;
+        %tmp.7 = lgetv %sO2In;
+        symbol [ sO2In %tmp.7 102 26 31 ];
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        lputv %sO2.2 %tmp.8;
+        symbol [ sO2 %sO2.2 102 12 15 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 103 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_stop" ]
+        %sHe.3 = local;
+        symbol [ sHe %sHe.3 103 12 15 ];
+        %tmp.9 = self;
+        symbol [ asFloat %tmp.10 103 18 25 ];
+        %tmp.10 = getv function %tmp.9 :asFloat;
+        %tmp.11 = lgetv %sHeIn;
+        symbol [ sHeIn %tmp.11 103 26 31 ];
+        %tmp.12 = invoke %tmp.9 %tmp.10(%tmp.11);
+        lputv %sHe.3 %tmp.12;
+        symbol [ sHe %sHe.3 103 12 15 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 104 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_stop" ]
+        %Pf.4 = local;
+        symbol [ Pf %Pf.4 104 12 14 ];
+        %tmp.13 = self;
+        symbol [ asFloat %tmp.14 104 17 24 ];
+        %tmp.14 = getv function %tmp.13 :asFloat;
+        %tmp.15 = lgetv %PfIn;
+        symbol [ PfIn %tmp.15 104 25 29 ];
+        %tmp.16 = invoke %tmp.13 %tmp.14(%tmp.15);
+        lputv %Pf.4 %tmp.16;
+        symbol [ Pf %Pf.4 104 12 14 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 105 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_stop" ]
+        %tO2.5 = local;
+        symbol [ tO2 %tO2.5 105 12 15 ];
+        %tmp.17 = self;
+        symbol [ asFloat %tmp.18 105 18 25 ];
+        %tmp.18 = getv function %tmp.17 :asFloat;
+        %tmp.19 = lgetv %tO2In;
+        symbol [ tO2In %tmp.19 105 26 31 ];
+        %tmp.20 = invoke %tmp.17 %tmp.18(%tmp.19);
+        lputv %tO2.5 %tmp.20;
+        symbol [ tO2 %tO2.5 105 12 15 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 106 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_stop" ]
+        %tHe.6 = local;
+        symbol [ tHe %tHe.6 106 12 15 ];
+        %tmp.21 = self;
+        symbol [ asFloat %tmp.22 106 18 25 ];
+        %tmp.22 = getv function %tmp.21 :asFloat;
+        %tmp.23 = lgetv %tHeIn;
+        symbol [ tHeIn %tmp.23 106 26 31 ];
+        %tmp.24 = invoke %tmp.21 %tmp.22(%tmp.23);
+        lputv %tHe.6 %tmp.24;
+        symbol [ tHe %tHe.6 106 12 15 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 107 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_stop" ]
+        %Ftop.7 = local;
+        symbol [ Ftop %Ftop.7 107 12 16 ];
+        %tmp.25 = self;
+        symbol [ asFloat %tmp.26 107 19 26 ];
+        %tmp.26 = getv function %tmp.25 :asFloat;
+        %tmp.27 = lgetv %FtopIn;
+        symbol [ FtopIn %tmp.27 107 27 33 ];
+        %tmp.28 = invoke %tmp.25 %tmp.26(%tmp.27);
+        lputv %Ftop.7 %tmp.28;
+        symbol [ Ftop %Ftop.7 107 12 16 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 109 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_stop" ]
+        %denom.8 = local;
+        symbol [ denom %denom.8 109 12 17 ];
+        %tmp.29 = 1.0;
+        %tmp.30 = lgetv %Ftop.7;
+        symbol [ Ftop %tmp.30 109 26 30 ];
+        %tmp.31 = sub %tmp.29 %tmp.30;
+        lputv %denom.8 %tmp.31;
+        symbol [ denom %denom.8 109 12 17 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 110 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_stop" ]
+        %A.9 = local;
+        symbol [ A %A.9 110 12 13 ];
+        %tmp.32 = lgetv %Pf.4;
+        symbol [ Pf %tmp.32 110 16 18 ];
+        %tmp.33 = lgetv %tO2.5;
+        symbol [ tO2 %tmp.33 110 22 25 ];
+        %tmp.34 = lgetv %Ftop.7;
+        symbol [ Ftop %tmp.34 110 28 32 ];
+        %tmp.35 = 1.0;
+        %tmp.36 = lgetv %tHe.6;
+        symbol [ tHe %tmp.36 110 42 45 ];
+        %tmp.37 = sub %tmp.35 %tmp.36;
+        %tmp.38 = mul %tmp.34 %tmp.37;
+        %tmp.39 = sub %tmp.33 %tmp.38;
+        %tmp.40 = mul %tmp.32 %tmp.39;
+        lputv %A.9 %tmp.40;
+        symbol [ A %A.9 110 12 13 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 111 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_stop" ]
+        %B.10 = local;
+        symbol [ B %B.10 111 12 13 ];
+        %tmp.41 = lgetv %sO2.2;
+        symbol [ sO2 %tmp.41 111 16 19 ];
+        %tmp.42 = lgetv %Ftop.7;
+        symbol [ Ftop %tmp.42 111 22 26 ];
+        %tmp.43 = sub %tmp.41 %tmp.42;
+        %tmp.44 = lgetv %Ftop.7;
+        symbol [ Ftop %tmp.44 111 29 33 ];
+        %tmp.45 = lgetv %sHe.3;
+        symbol [ sHe %tmp.45 111 36 39 ];
+        %tmp.46 = mul %tmp.44 %tmp.45;
+        %tmp.47 = add %tmp.43 %tmp.46;
+        lputv %B.10 %tmp.47;
+        symbol [ B %B.10 111 12 13 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 113 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_stop" ]
+        %lo.11 = local;
+        symbol [ lo %lo.11 113 12 14 ];
+        %tmp.48 = 0.0;
+        lputv %lo.11 %tmp.48;
+        symbol [ lo %lo.11 113 12 14 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 114 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_stop" ]
+        %hi.12 = local;
+        symbol [ hi %hi.12 114 12 14 ];
+        %tmp.49 = lgetv %Ps.1;
+        symbol [ Ps %tmp.49 114 17 19 ];
+        lputv %hi.12 %tmp.49;
+        symbol [ hi %hi.12 114 12 14 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 117 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_117_8_122_8_if_stmt:
+        %tmp.50 = lgetv %sHe.3;
+        symbol [ sHe %tmp.50 117 12 15 ];
+        %tmp.51 = 0.000000001;
+        %tmp.52 = gt %tmp.50 %tmp.51;
+        bf %tmp.52 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_117_8_122_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_117_8_122_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_117_31_122_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 118 12 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_117_31_122_8_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_117_31_122_8_stop" ]
+        %maxHeBar.13 = local;
+        symbol [ maxHeBar %maxHeBar.13 118 16 24 ];
+        %tmp.53 = lgetv %Pf.4;
+        symbol [ Pf %tmp.53 118 28 30 ];
+        %tmp.54 = lgetv %tHe.6;
+        symbol [ tHe %tmp.54 118 33 36 ];
+        %tmp.55 = mul %tmp.53 %tmp.54;
+        %tmp.56 = lgetv %sHe.3;
+        symbol [ sHe %tmp.56 118 40 43 ];
+        %tmp.57 = div %tmp.55 %tmp.56;
+        lputv %maxHeBar.13 %tmp.57;
+        symbol [ maxHeBar %maxHeBar.13 118 16 24 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 119 12 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_119_12_121_12_if_stmt:
+        %tmp.58 = lgetv %maxHeBar.13;
+        symbol [ maxHeBar %tmp.58 119 16 24 ];
+        %tmp.59 = lgetv %hi.12;
+        symbol [ hi %tmp.59 119 27 29 ];
+        %tmp.60 = lt %tmp.58 %tmp.59;
+        bf %tmp.60 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_119_12_121_12_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_119_12_121_12_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_119_31_121_12_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 120 16 ]
+        %tmp.61 = lgetv %maxHeBar.13;
+        symbol [ maxHeBar %tmp.61 120 21 29 ];
+        lputv %hi.12 %tmp.61;
+        symbol [ hi %hi.12 120 16 18 ];
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_119_31_121_12_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_119_12_121_12_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_119_12_121_12_if_end:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_117_31_122_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_117_8_122_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_117_8_122_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 125 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_125_8_140_8_if_stmt:
+        %tmp.62 = lgetv %B.10;
+        symbol [ B %tmp.62 125 12 13 ];
+        symbol [ abs %tmp.63 125 14 17 ];
+        %tmp.63 = getv function %tmp.62 :abs;
+        %tmp.64 = invoke %tmp.62 %tmp.63();
+        %tmp.65 = 0.000000000001;
+        %tmp.66 = gt %tmp.64 %tmp.65;
+        bf %tmp.66 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_125_8_140_8_if_else_false;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_125_8_140_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_125_38_136_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 126 12 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_125_38_136_8_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_125_38_136_8_stop" ]
+        %bound.14 = local;
+        symbol [ bound %bound.14 126 16 21 ];
+        %tmp.67 = lgetv %A.9;
+        symbol [ A %tmp.67 126 24 25 ];
+        %tmp.68 = lgetv %B.10;
+        symbol [ B %tmp.68 126 28 29 ];
+        %tmp.69 = div %tmp.67 %tmp.68;
+        lputv %bound.14 %tmp.69;
+        symbol [ bound %bound.14 126 16 21 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 127 12 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_127_12_135_12_if_stmt:
+        %tmp.70 = lgetv %B.10;
+        symbol [ B %tmp.70 127 16 17 ];
+        %tmp.71 = 0.0;
+        %tmp.72 = gt %tmp.70 %tmp.71;
+        bf %tmp.72 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_127_12_135_12_if_else_false;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_127_12_135_12_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_127_25_131_12_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 128 16 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_128_16_130_16_if_stmt:
+        %tmp.73 = lgetv %bound.14;
+        symbol [ bound %tmp.73 128 20 25 ];
+        %tmp.74 = lgetv %hi.12;
+        symbol [ hi %tmp.74 128 28 30 ];
+        %tmp.75 = lt %tmp.73 %tmp.74;
+        bf %tmp.75 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_128_16_130_16_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_128_16_130_16_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_128_32_130_16_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 129 20 ]
+        %tmp.76 = lgetv %bound.14;
+        symbol [ bound %tmp.76 129 25 30 ];
+        lputv %hi.12 %tmp.76;
+        symbol [ hi %hi.12 129 20 22 ];
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_128_32_130_16_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_128_16_130_16_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_128_16_130_16_if_end:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_127_25_131_12_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_127_12_135_12_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_127_12_135_12_if_else_false:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_131_19_135_12_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 132 16 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_132_16_134_16_if_stmt:
+        %tmp.77 = lgetv %bound.14;
+        symbol [ bound %tmp.77 132 20 25 ];
+        %tmp.78 = lgetv %lo.11;
+        symbol [ lo %tmp.78 132 28 30 ];
+        %tmp.79 = gt %tmp.77 %tmp.78;
+        bf %tmp.79 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_132_16_134_16_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_132_16_134_16_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_132_32_134_16_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 133 20 ]
+        %tmp.80 = lgetv %bound.14;
+        symbol [ bound %tmp.80 133 25 30 ];
+        lputv %lo.11 %tmp.80;
+        symbol [ lo %lo.11 133 20 22 ];
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_132_32_134_16_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_132_16_134_16_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_132_16_134_16_if_end:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_131_19_135_12_stop:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_127_12_135_12_if_end:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_125_38_136_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_125_8_140_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_125_8_140_8_if_else_false:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_136_15_140_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 137 12 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_137_12_139_12_if_stmt:
+        %tmp.81 = lgetv %A.9;
+        symbol [ A %tmp.81 137 17 18 ];
+        %tmp.82 = lgetv %denom.8;
+        symbol [ denom %tmp.82 137 21 26 ];
+        %tmp.83 = div %tmp.81 %tmp.82;
+        %tmp.84 = -0.000000001;
+        %tmp.85 = lt %tmp.83 %tmp.84;
+        bf %tmp.85 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_137_12_139_12_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_137_12_139_12_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_137_44_139_12_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 138 16 ]
+        %tmp.86 = null;
+        ret %tmp.86;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_137_44_139_12_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_137_12_139_12_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_137_12_139_12_if_end:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_136_15_140_8_stop:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_125_8_140_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 143 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_stop" ]
+        %C0.15 = local;
+        symbol [ C0 %C0.15 143 12 14 ];
+        %tmp.87 = lgetv %Pf.4;
+        symbol [ Pf %tmp.87 143 17 19 ];
+        %tmp.88 = 1.0;
+        %tmp.89 = lgetv %tHe.6;
+        symbol [ tHe %tmp.89 143 29 32 ];
+        %tmp.90 = sub %tmp.88 %tmp.89;
+        %tmp.91 = mul %tmp.87 %tmp.90;
+        %tmp.92 = lgetv %A.9;
+        symbol [ A %tmp.92 143 37 38 ];
+        %tmp.93 = lgetv %denom.8;
+        symbol [ denom %tmp.93 143 41 46 ];
+        %tmp.94 = div %tmp.92 %tmp.93;
+        %tmp.95 = sub %tmp.91 %tmp.94;
+        lputv %C0.15 %tmp.95;
+        symbol [ C0 %C0.15 143 12 14 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 144 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_stop" ]
+        %C1.16 = local;
+        symbol [ C1 %C1.16 144 12 14 ];
+        %tmp.96 = 1.0;
+        %tmp.97 = lgetv %sHe.3;
+        symbol [ sHe %tmp.97 144 25 28 ];
+        %tmp.98 = sub %tmp.96 %tmp.97;
+        %tmp.99 = sub 0 %tmp.98;
+        %tmp.100 = lgetv %B.10;
+        symbol [ B %tmp.100 144 33 34 ];
+        %tmp.101 = lgetv %denom.8;
+        symbol [ denom %tmp.101 144 37 42 ];
+        %tmp.102 = div %tmp.100 %tmp.101;
+        %tmp.103 = add %tmp.99 %tmp.102;
+        lputv %C1.16 %tmp.103;
+        symbol [ C1 %C1.16 144 12 14 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 146 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_146_8_161_8_if_stmt:
+        %tmp.104 = lgetv %C1.16;
+        symbol [ C1 %tmp.104 146 12 14 ];
+        symbol [ abs %tmp.105 146 15 18 ];
+        %tmp.105 = getv function %tmp.104 :abs;
+        %tmp.106 = invoke %tmp.104 %tmp.105();
+        %tmp.107 = 0.000000000001;
+        %tmp.108 = gt %tmp.106 %tmp.107;
+        bf %tmp.108 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_146_8_161_8_if_else_false;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_146_8_161_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_146_39_157_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 147 12 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_146_39_157_8_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_146_39_157_8_stop" ]
+        %bound2.17 = local;
+        symbol [ bound2 %bound2.17 147 16 22 ];
+        %tmp.109 = lgetv %C0.15;
+        symbol [ C0 %tmp.109 147 26 28 ];
+        %tmp.110 = sub 0 %tmp.109;
+        %tmp.111 = lgetv %C1.16;
+        symbol [ C1 %tmp.111 147 31 33 ];
+        %tmp.112 = div %tmp.110 %tmp.111;
+        lputv %bound2.17 %tmp.112;
+        symbol [ bound2 %bound2.17 147 16 22 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 148 12 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_148_12_156_12_if_stmt:
+        %tmp.113 = lgetv %C1.16;
+        symbol [ C1 %tmp.113 148 16 18 ];
+        %tmp.114 = 0.0;
+        %tmp.115 = gt %tmp.113 %tmp.114;
+        bf %tmp.115 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_148_12_156_12_if_else_false;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_148_12_156_12_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_148_26_152_12_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 149 16 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_149_16_151_16_if_stmt:
+        %tmp.116 = lgetv %bound2.17;
+        symbol [ bound2 %tmp.116 149 20 26 ];
+        %tmp.117 = lgetv %lo.11;
+        symbol [ lo %tmp.117 149 29 31 ];
+        %tmp.118 = gt %tmp.116 %tmp.117;
+        bf %tmp.118 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_149_16_151_16_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_149_16_151_16_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_149_33_151_16_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 150 20 ]
+        %tmp.119 = lgetv %bound2.17;
+        symbol [ bound2 %tmp.119 150 25 31 ];
+        lputv %lo.11 %tmp.119;
+        symbol [ lo %lo.11 150 20 22 ];
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_149_33_151_16_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_149_16_151_16_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_149_16_151_16_if_end:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_148_26_152_12_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_148_12_156_12_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_148_12_156_12_if_else_false:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_152_19_156_12_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 153 16 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_153_16_155_16_if_stmt:
+        %tmp.120 = lgetv %bound2.17;
+        symbol [ bound2 %tmp.120 153 20 26 ];
+        %tmp.121 = lgetv %hi.12;
+        symbol [ hi %tmp.121 153 29 31 ];
+        %tmp.122 = lt %tmp.120 %tmp.121;
+        bf %tmp.122 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_153_16_155_16_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_153_16_155_16_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_153_33_155_16_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 154 20 ]
+        %tmp.123 = lgetv %bound2.17;
+        symbol [ bound2 %tmp.123 154 25 31 ];
+        lputv %hi.12 %tmp.123;
+        symbol [ hi %hi.12 154 20 22 ];
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_153_33_155_16_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_153_16_155_16_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_153_16_155_16_if_end:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_152_19_156_12_stop:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_148_12_156_12_if_end:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_146_39_157_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_146_8_161_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_146_8_161_8_if_else_false:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_157_15_161_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 158 12 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_158_12_160_12_if_stmt:
+        %tmp.124 = lgetv %C0.15;
+        symbol [ C0 %tmp.124 158 16 18 ];
+        %tmp.125 = -0.000000001;
+        %tmp.126 = lt %tmp.124 %tmp.125;
+        bf %tmp.126 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_158_12_160_12_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_158_12_160_12_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_158_35_160_12_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 159 16 ]
+        %tmp.127 = null;
+        ret %tmp.127;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_158_35_160_12_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_158_12_160_12_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_158_12_160_12_if_end:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_157_15_161_8_stop:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_146_8_161_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 163 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_163_8_165_8_if_stmt:
+        %tmp.128 = lgetv %lo.11;
+        symbol [ lo %tmp.128 163 12 14 ];
+        %tmp.129 = 0.0;
+        %tmp.130 = lt %tmp.128 %tmp.129;
+        bf %tmp.130 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_163_8_165_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_163_8_165_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_163_22_165_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 164 12 ]
+        %tmp.131 = 0.0;
+        lputv %lo.11 %tmp.131;
+        symbol [ lo %lo.11 164 12 14 ];
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_163_22_165_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_163_8_165_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_163_8_165_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 166 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_166_8_168_8_if_stmt:
+        %tmp.132 = lgetv %hi.12;
+        symbol [ hi %tmp.132 166 12 14 ];
+        %tmp.133 = lgetv %Ps.1;
+        symbol [ Ps %tmp.133 166 17 19 ];
+        %tmp.134 = gt %tmp.132 %tmp.133;
+        bf %tmp.134 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_166_8_168_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_166_8_168_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_166_21_168_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 167 12 ]
+        %tmp.135 = lgetv %Ps.1;
+        symbol [ Ps %tmp.135 167 17 19 ];
+        lputv %hi.12 %tmp.135;
+        symbol [ hi %hi.12 167 12 14 ];
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_166_21_168_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_166_8_168_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_166_8_168_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 170 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_170_8_172_8_if_stmt:
+        %tmp.136 = lgetv %hi.12;
+        symbol [ hi %tmp.136 170 12 14 ];
+        %tmp.137 = lgetv %lo.11;
+        symbol [ lo %tmp.137 170 17 19 ];
+        %tmp.138 = 0.000001;
+        %tmp.139 = sub %tmp.137 %tmp.138;
+        %tmp.140 = lt %tmp.136 %tmp.139;
+        bf %tmp.140 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_170_8_172_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_170_8_172_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_170_32_172_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 171 12 ]
+        %tmp.141 = null;
+        ret %tmp.141;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_170_32_172_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_170_8_172_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_170_8_172_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 174 8 ]
+        %tmp.142 = lgetv %hi.12;
+        symbol [ hi %tmp.142 174 15 17 ];
+        ret %tmp.142;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_99_23_175_4_stop:
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc"; @line = 185; @symbol_functiondef = [blend,185,13,18]; @symbol_param<0> = [mode,186,8,12]; @symbol_param<0>_type<0> = [Mode,186,16,20]; @symbol_param<1> = [topO2,187,8,13]; @symbol_param<1>_type<0> = [Numeric,187,17,24]; @symbol_param<2> = [startBar,188,8,16]; @symbol_param<2>_type<0> = [Numeric,188,20,27]; @symbol_param<3> = [finalBar,189,8,16]; @symbol_param<3>_type<0> = [Numeric,189,20,27]; @symbol_param<4> = [startO2,190,8,15]; @symbol_param<4>_type<0> = [Numeric,190,19,26]; @symbol_param<5> = [startHe,191,8,15]; @symbol_param<5>_type<0> = [Numeric,191,19,26]; @symbol_param<6> = [targetO2,192,8,16]; @symbol_param<6>_type<0> = [Numeric,192,20,27]; @symbol_param<7> = [targetHe,193,8,16]; @symbol_param<7>_type<0> = [Numeric,193,20,27]; @symbol_return<0> = [Dictionary,194,9,19]; ]
+    function blend(mode as Mode, topO2 as Numeric, startBar as Numeric, finalBar as Numeric, startO2 as Numeric, startHe as Numeric, targetO2 as Numeric, targetHe as Numeric) as Dictionary {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 196 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_stop" ]
+        %Ftop.1 = local;
+        symbol [ Ftop %Ftop.1 196 12 16 ];
+        %tmp.1 = self;
+        symbol [ frac %tmp.2 196 19 23 ];
+        %tmp.2 = getv function %tmp.1 :frac;
+        %tmp.3 = lgetv %topO2;
+        symbol [ topO2 %tmp.3 196 24 29 ];
+        %tmp.4 = invoke %tmp.1 %tmp.2(%tmp.3);
+        lputv %Ftop.1 %tmp.4;
+        symbol [ Ftop %Ftop.1 196 12 16 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 198 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_198_8_202_8_if_stmt:
+        %tmp.5 = lgetv %Ftop.1;
+        symbol [ Ftop %tmp.5 198 12 16 ];
+        %tmp.6 = 1.0;
+        %tmp.7 = 0.000000001;
+        %tmp.8 = sub %tmp.6 %tmp.7;
+        %tmp.9 = gte %tmp.5 %tmp.8;
+        bf %tmp.9 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_198_8_202_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_198_8_202_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_198_39_202_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 199 12 ]
+        %tmp.10 = newd 1;
+        %tmp.11 = "error";
+        %tmp.12 = "Top-up gas O2 must be less than 100.";
+        %tmp.13 = dup %tmp.10;
+        %tmp.14 = aputv %tmp.13 %tmp.11 %tmp.12;
+        ret %tmp.14;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_198_39_202_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_198_8_202_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_198_8_202_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 204 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_stop" ]
+        %Ps.2 = local;
+        symbol [ Ps %Ps.2 204 12 14 ];
+        %tmp.15 = 0.0;
+        lputv %Ps.2 %tmp.15;
+        symbol [ Ps %Ps.2 204 12 14 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 205 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_stop" ]
+        %Pf.3 = local;
+        symbol [ Pf %Pf.3 205 12 14 ];
+        %tmp.16 = self;
+        symbol [ asFloat %tmp.17 205 17 24 ];
+        %tmp.17 = getv function %tmp.16 :asFloat;
+        %tmp.18 = lgetv %finalBar;
+        symbol [ finalBar %tmp.18 205 25 33 ];
+        %tmp.19 = invoke %tmp.16 %tmp.17(%tmp.18);
+        lputv %Pf.3 %tmp.19;
+        symbol [ Pf %Pf.3 205 12 14 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 206 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_stop" ]
+        %sO2.4 = local;
+        symbol [ sO2 %sO2.4 206 12 15 ];
+        %tmp.20 = 0.0;
+        lputv %sO2.4 %tmp.20;
+        symbol [ sO2 %sO2.4 206 12 15 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 207 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_stop" ]
+        %sHe.5 = local;
+        symbol [ sHe %sHe.5 207 12 15 ];
+        %tmp.21 = 0.0;
+        lputv %sHe.5 %tmp.21;
+        symbol [ sHe %sHe.5 207 12 15 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 208 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_stop" ]
+        %tO2.6 = local;
+        symbol [ tO2 %tO2.6 208 12 15 ];
+        %tmp.22 = self;
+        symbol [ frac %tmp.23 208 18 22 ];
+        %tmp.23 = getv function %tmp.22 :frac;
+        %tmp.24 = lgetv %targetO2;
+        symbol [ targetO2 %tmp.24 208 23 31 ];
+        %tmp.25 = invoke %tmp.22 %tmp.23(%tmp.24);
+        lputv %tO2.6 %tmp.25;
+        symbol [ tO2 %tO2.6 208 12 15 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 209 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_stop" ]
+        %tHe.7 = local;
+        symbol [ tHe %tHe.7 209 12 15 ];
+        %tmp.26 = self;
+        symbol [ frac %tmp.27 209 18 22 ];
+        %tmp.27 = getv function %tmp.26 :frac;
+        %tmp.28 = lgetv %targetHe;
+        symbol [ targetHe %tmp.28 209 23 31 ];
+        %tmp.29 = invoke %tmp.26 %tmp.27(%tmp.28);
+        lputv %tHe.7 %tmp.29;
+        symbol [ tHe %tHe.7 209 12 15 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 211 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_211_8_215_8_if_stmt:
+        %tmp.30 = lgetv %mode;
+        symbol [ mode %tmp.30 211 12 16 ];
+        symbol [ MODE_TOP %tmp.32 211 20 28 ];
+        %tmp.32 = getv ? :MODE_TOP;
+        %tmp.33 = eq %tmp.30 %tmp.32;
+        bf %tmp.33 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_211_8_215_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_211_8_215_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_211_30_215_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 212 12 ]
+        %tmp.34 = self;
+        symbol [ asFloat %tmp.35 212 17 24 ];
+        %tmp.35 = getv function %tmp.34 :asFloat;
+        %tmp.36 = lgetv %startBar;
+        symbol [ startBar %tmp.36 212 25 33 ];
+        %tmp.37 = invoke %tmp.34 %tmp.35(%tmp.36);
+        lputv %Ps.2 %tmp.37;
+        symbol [ Ps %Ps.2 212 12 14 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 213 12 ]
+        %tmp.38 = self;
+        symbol [ frac %tmp.39 213 18 22 ];
+        %tmp.39 = getv function %tmp.38 :frac;
+        %tmp.40 = lgetv %startO2;
+        symbol [ startO2 %tmp.40 213 23 30 ];
+        %tmp.41 = invoke %tmp.38 %tmp.39(%tmp.40);
+        lputv %sO2.4 %tmp.41;
+        symbol [ sO2 %sO2.4 213 12 15 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 214 12 ]
+        %tmp.42 = self;
+        symbol [ frac %tmp.43 214 18 22 ];
+        %tmp.43 = getv function %tmp.42 :frac;
+        %tmp.44 = lgetv %startHe;
+        symbol [ startHe %tmp.44 214 23 30 ];
+        %tmp.45 = invoke %tmp.42 %tmp.43(%tmp.44);
+        lputv %sHe.5 %tmp.45;
+        symbol [ sHe %sHe.5 214 12 15 ];
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_211_30_215_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_211_8_215_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_211_8_215_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 218 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_218_8_220_8_if_stmt:
+        %tmp.46 = lgetv %Pf.3;
+        symbol [ Pf %tmp.46 218 12 14 ];
+        %tmp.47 = 0.0;
+        %tmp.48 = lte %tmp.46 %tmp.47;
+        bf %tmp.48 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_218_8_220_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_218_8_220_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_218_23_220_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 219 12 ]
+        %tmp.49 = newd 1;
+        %tmp.50 = "error";
+        %tmp.51 = "Check final pressure.";
+        %tmp.52 = dup %tmp.49;
+        %tmp.53 = aputv %tmp.52 %tmp.50 %tmp.51;
+        ret %tmp.53;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_218_23_220_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_218_8_220_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_218_8_220_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 222 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_222_8_224_8_if_stmt:
+        %tmp.54 = lgetv %Ps.2;
+        symbol [ Ps %tmp.54 222 12 14 ];
+        %tmp.55 = 0.0;
+        %tmp.56 = lt %tmp.54 %tmp.55;
+        bf %tmp.56 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_222_8_224_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_222_8_224_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_222_22_224_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 223 12 ]
+        %tmp.57 = newd 1;
+        %tmp.58 = "error";
+        %tmp.59 = "Check start pressure.";
+        %tmp.60 = dup %tmp.57;
+        %tmp.61 = aputv %tmp.60 %tmp.58 %tmp.59;
+        ret %tmp.61;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_222_22_224_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_222_8_224_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_222_8_224_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 226 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_226_8_230_8_if_stmt:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_226_12_226_37_begin:
+        %tmp.62 = lgetv %mode;
+        symbol [ mode %tmp.62 226 12 16 ];
+        symbol [ MODE_TOP %tmp.64 226 20 28 ];
+        %tmp.64 = getv ? :MODE_TOP;
+        %tmp.65 = eq %tmp.62 %tmp.64;
+        bf %tmp.65 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_226_8_230_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_226_32_226_37_true:
+        %tmp.66 = lgetv %Ps.2;
+        symbol [ Ps %tmp.66 226 32 34 ];
+        %tmp.67 = lgetv %Pf.3;
+        symbol [ Pf %tmp.67 226 37 39 ];
+        %tmp.68 = gt %tmp.66 %tmp.67;
+        push %tmp.68;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_226_32_226_37_end:
+        %tmp.69 = phi [%tmp.65 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_226_12_226_37_begin] [%tmp.68 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_226_32_226_37_true] [%tmp.69 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_226_32_226_37_end];
+        bf %tmp.69 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_226_8_230_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_226_8_230_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_226_41_230_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 227 12 ]
+        %tmp.70 = newd 1;
+        %tmp.71 = "error";
+        %tmp.72 = "Start pressure cannot be higher than final pressure.";
+        %tmp.73 = dup %tmp.70;
+        %tmp.74 = aputv %tmp.73 %tmp.71 %tmp.72;
+        ret %tmp.74;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_226_41_230_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_226_8_230_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_226_8_230_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 232 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_232_8_236_8_if_stmt:
+        %tmp.75 = lgetv %sO2.4;
+        symbol [ sO2 %tmp.75 232 13 16 ];
+        %tmp.76 = lgetv %sHe.5;
+        symbol [ sHe %tmp.76 232 19 22 ];
+        %tmp.77 = add %tmp.75 %tmp.76;
+        %tmp.78 = 1.0;
+        %tmp.79 = 0.000000001;
+        %tmp.80 = add %tmp.78 %tmp.79;
+        %tmp.81 = gt %tmp.77 %tmp.80;
+        bf %tmp.81 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_232_8_236_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_232_8_236_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_232_45_236_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 233 12 ]
+        %tmp.82 = newd 1;
+        %tmp.83 = "error";
+        %tmp.84 = "Start mix: O2 + He must be <= 100.";
+        %tmp.85 = dup %tmp.82;
+        %tmp.86 = aputv %tmp.85 %tmp.83 %tmp.84;
+        ret %tmp.86;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_232_45_236_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_232_8_236_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_232_8_236_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 238 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_238_8_242_8_if_stmt:
+        %tmp.87 = lgetv %tO2.6;
+        symbol [ tO2 %tmp.87 238 13 16 ];
+        %tmp.88 = lgetv %tHe.7;
+        symbol [ tHe %tmp.88 238 19 22 ];
+        %tmp.89 = add %tmp.87 %tmp.88;
+        %tmp.90 = 1.0;
+        %tmp.91 = 0.000000001;
+        %tmp.92 = add %tmp.90 %tmp.91;
+        %tmp.93 = gt %tmp.89 %tmp.92;
+        bf %tmp.93 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_238_8_242_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_238_8_242_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_238_45_242_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 239 12 ]
+        %tmp.94 = newd 1;
+        %tmp.95 = "error";
+        %tmp.96 = "Target mix: O2 + He must be <= 100.";
+        %tmp.97 = dup %tmp.94;
+        %tmp.98 = aputv %tmp.97 %tmp.95 %tmp.96;
+        ret %tmp.98;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_238_45_242_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_238_8_242_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_238_8_242_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 244 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_stop" ]
+        %Pd.8 = local;
+        symbol [ Pd %Pd.8 244 12 14 ];
+        %tmp.99 = lgetv %Ps.2;
+        symbol [ Ps %tmp.99 244 17 19 ];
+        lputv %Pd.8 %tmp.99;
+        symbol [ Pd %Pd.8 244 12 14 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 245 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_stop" ]
+        %add.9 = local;
+        symbol [ add %add.9 245 12 15 ];
+        %tmp.100 = self;
+        symbol [ calcAdditions %tmp.101 245 18 31 ];
+        %tmp.101 = getv function %tmp.100 :calcAdditions;
+        %tmp.102 = lgetv %Pd.8;
+        symbol [ Pd %tmp.102 245 32 34 ];
+        %tmp.103 = lgetv %sO2.4;
+        symbol [ sO2 %tmp.103 245 36 39 ];
+        %tmp.104 = lgetv %sHe.5;
+        symbol [ sHe %tmp.104 245 41 44 ];
+        %tmp.105 = lgetv %Pf.3;
+        symbol [ Pf %tmp.105 245 46 48 ];
+        %tmp.106 = lgetv %tO2.6;
+        symbol [ tO2 %tmp.106 245 50 53 ];
+        %tmp.107 = lgetv %tHe.7;
+        symbol [ tHe %tmp.107 245 55 58 ];
+        %tmp.108 = lgetv %Ftop.1;
+        symbol [ Ftop %tmp.108 245 60 64 ];
+        %tmp.109 = invoke %tmp.100 %tmp.101(%tmp.102, %tmp.103, %tmp.104, %tmp.105, %tmp.106, %tmp.107, %tmp.108);
+        lputv %add.9 %tmp.109;
+        symbol [ add %add.9 245 12 15 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 247 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_stop" ]
+        %addHe.10 = local;
+        symbol [ addHe %addHe.10 247 12 17 ];
+        %tmp.110 = lgetv %add.9;
+        symbol [ add %tmp.110 247 21 24 ];
+        %tmp.111 = "addHe";
+        %tmp.112 = agetv %tmp.110 %tmp.111;
+        %tmp.113 = as %tmp.112 Numeric;
+        symbol [ Numeric %tmp.113 247 37 44 ];
+        symbol [ toFloat %tmp.114 247 46 53 ];
+        %tmp.114 = getv function %tmp.113 :toFloat;
+        %tmp.115 = invoke %tmp.113 %tmp.114();
+        lputv %addHe.10 %tmp.115;
+        symbol [ addHe %addHe.10 247 12 17 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 248 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_stop" ]
+        %addO2.11 = local;
+        symbol [ addO2 %addO2.11 248 12 17 ];
+        %tmp.116 = lgetv %add.9;
+        symbol [ add %tmp.116 248 21 24 ];
+        %tmp.117 = "addO2";
+        %tmp.118 = agetv %tmp.116 %tmp.117;
+        %tmp.119 = as %tmp.118 Numeric;
+        symbol [ Numeric %tmp.119 248 37 44 ];
+        symbol [ toFloat %tmp.120 248 46 53 ];
+        %tmp.120 = getv function %tmp.119 :toFloat;
+        %tmp.121 = invoke %tmp.119 %tmp.120();
+        lputv %addO2.11 %tmp.121;
+        symbol [ addO2 %addO2.11 248 12 17 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 249 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_stop" ]
+        %addTop.12 = local;
+        symbol [ addTop %addTop.12 249 12 18 ];
+        %tmp.122 = lgetv %add.9;
+        symbol [ add %tmp.122 249 22 25 ];
+        %tmp.123 = "addTop";
+        %tmp.124 = agetv %tmp.122 %tmp.123;
+        %tmp.125 = as %tmp.124 Numeric;
+        symbol [ Numeric %tmp.125 249 39 46 ];
+        symbol [ toFloat %tmp.126 249 48 55 ];
+        %tmp.126 = getv function %tmp.125 :toFloat;
+        %tmp.127 = invoke %tmp.125 %tmp.126();
+        lputv %addTop.12 %tmp.127;
+        symbol [ addTop %addTop.12 249 12 18 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 253 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_253_8_279_8_if_stmt:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_253_12_256_31_begin:
+        %tmp.128 = lgetv %mode;
+        symbol [ mode %tmp.128 253 12 16 ];
+        symbol [ MODE_TOP %tmp.130 253 20 28 ];
+        %tmp.130 = getv ? :MODE_TOP;
+        %tmp.131 = eq %tmp.128 %tmp.130;
+        bf %tmp.131 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_253_8_279_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_254_12_256_31_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_254_13_256_23_begin:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_254_13_255_22_begin:
+        %tmp.132 = lgetv %addHe.10;
+        symbol [ addHe %tmp.132 254 13 18 ];
+        %tmp.133 = -0.000001;
+        %tmp.134 = lt %tmp.132 %tmp.133;
+        bt %tmp.134 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_253_8_279_8_if_true;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_255_13_255_22_false:
+        %tmp.135 = lgetv %addO2.11;
+        symbol [ addO2 %tmp.135 255 13 18 ];
+        %tmp.136 = -0.000001;
+        %tmp.137 = lt %tmp.135 %tmp.136;
+        push %tmp.137;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_255_13_255_22_end:
+        %tmp.138 = phi [%tmp.134 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_254_13_255_22_begin] [%tmp.137 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_255_13_255_22_false] [%tmp.138 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_255_13_255_22_end];
+        bt %tmp.138 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_253_8_279_8_if_true;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_256_13_256_23_false:
+        %tmp.139 = lgetv %addTop.12;
+        symbol [ addTop %tmp.139 256 13 19 ];
+        %tmp.140 = -0.000001;
+        %tmp.141 = lt %tmp.139 %tmp.140;
+        push %tmp.141;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_256_13_256_23_end:
+        %tmp.142 = phi [%tmp.138 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_254_13_256_23_begin] [%tmp.141 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_256_13_256_23_false] [%tmp.142 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_256_13_256_23_end];
+        push %tmp.142;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_254_12_256_31_end:
+        %tmp.143 = phi [%tmp.131 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_253_12_256_31_begin] [%tmp.142 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_254_12_256_31_true] [%tmp.143 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_254_12_256_31_end];
+        bf %tmp.143 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_253_8_279_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_253_8_279_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_256_34_279_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 258 12 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_256_34_279_8_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_256_34_279_8_stop" ]
+        %found.13 = local;
+        symbol [ found %found.13 258 16 21 ];
+        %tmp.144 = self;
+        symbol [ findDrain %tmp.145 258 24 33 ];
+        %tmp.145 = getv function %tmp.144 :findDrain;
+        %tmp.146 = lgetv %Ps.2;
+        symbol [ Ps %tmp.146 258 34 36 ];
+        %tmp.147 = lgetv %sO2.4;
+        symbol [ sO2 %tmp.147 258 38 41 ];
+        %tmp.148 = lgetv %sHe.5;
+        symbol [ sHe %tmp.148 258 43 46 ];
+        %tmp.149 = lgetv %Pf.3;
+        symbol [ Pf %tmp.149 258 48 50 ];
+        %tmp.150 = lgetv %tO2.6;
+        symbol [ tO2 %tmp.150 258 52 55 ];
+        %tmp.151 = lgetv %tHe.7;
+        symbol [ tHe %tmp.151 258 57 60 ];
+        %tmp.152 = lgetv %Ftop.1;
+        symbol [ Ftop %tmp.152 258 62 66 ];
+        %tmp.153 = invoke %tmp.144 %tmp.145(%tmp.146, %tmp.147, %tmp.148, %tmp.149, %tmp.150, %tmp.151, %tmp.152);
+        lputv %found.13 %tmp.153;
+        symbol [ found %found.13 258 16 21 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 260 12 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_260_12_264_12_if_stmt:
+        %tmp.154 = lgetv %found.13;
+        symbol [ found %tmp.154 260 16 21 ];
+        %tmp.155 = null;
+        %tmp.156 = eq %tmp.154 %tmp.155;
+        bf %tmp.156 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_260_12_264_12_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_260_12_264_12_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_260_31_264_12_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 261 16 ]
+        %tmp.157 = newd 1;
+        %tmp.158 = "error";
+        %tmp.159 = "Target not achievable with selected top-up gas. Try a different top-up gas or adjust target.";
+        %tmp.160 = dup %tmp.157;
+        %tmp.161 = aputv %tmp.160 %tmp.158 %tmp.159;
+        ret %tmp.161;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_260_31_264_12_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_260_12_264_12_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_260_12_264_12_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 266 12 ]
+        %tmp.162 = lgetv %found.13;
+        symbol [ found %tmp.162 266 17 22 ];
+        %tmp.163 = as %tmp.162 Float;
+        symbol [ Float %tmp.163 266 26 31 ];
+        lputv %Pd.8 %tmp.163;
+        symbol [ Pd %Pd.8 266 12 14 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 268 12 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_268_12_270_12_if_stmt:
+        %tmp.164 = lgetv %Pd.8;
+        symbol [ Pd %tmp.164 268 16 18 ];
+        %tmp.165 = 0.0;
+        %tmp.166 = lt %tmp.164 %tmp.165;
+        bf %tmp.166 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_268_12_270_12_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_268_12_270_12_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_268_26_270_12_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 269 16 ]
+        %tmp.167 = 0.0;
+        lputv %Pd.8 %tmp.167;
+        symbol [ Pd %Pd.8 269 16 18 ];
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_268_26_270_12_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_268_12_270_12_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_268_12_270_12_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 271 12 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_271_12_273_12_if_stmt:
+        %tmp.168 = lgetv %Pd.8;
+        symbol [ Pd %tmp.168 271 16 18 ];
+        %tmp.169 = lgetv %Ps.2;
+        symbol [ Ps %tmp.169 271 21 23 ];
+        %tmp.170 = gt %tmp.168 %tmp.169;
+        bf %tmp.170 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_271_12_273_12_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_271_12_273_12_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_271_25_273_12_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 272 16 ]
+        %tmp.171 = lgetv %Ps.2;
+        symbol [ Ps %tmp.171 272 21 23 ];
+        lputv %Pd.8 %tmp.171;
+        symbol [ Pd %Pd.8 272 16 18 ];
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_271_25_273_12_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_271_12_273_12_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_271_12_273_12_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 275 12 ]
+        %tmp.172 = self;
+        symbol [ calcAdditions %tmp.173 275 18 31 ];
+        %tmp.173 = getv function %tmp.172 :calcAdditions;
+        %tmp.174 = lgetv %Pd.8;
+        symbol [ Pd %tmp.174 275 32 34 ];
+        %tmp.175 = lgetv %sO2.4;
+        symbol [ sO2 %tmp.175 275 36 39 ];
+        %tmp.176 = lgetv %sHe.5;
+        symbol [ sHe %tmp.176 275 41 44 ];
+        %tmp.177 = lgetv %Pf.3;
+        symbol [ Pf %tmp.177 275 46 48 ];
+        %tmp.178 = lgetv %tO2.6;
+        symbol [ tO2 %tmp.178 275 50 53 ];
+        %tmp.179 = lgetv %tHe.7;
+        symbol [ tHe %tmp.179 275 55 58 ];
+        %tmp.180 = lgetv %Ftop.1;
+        symbol [ Ftop %tmp.180 275 60 64 ];
+        %tmp.181 = invoke %tmp.172 %tmp.173(%tmp.174, %tmp.175, %tmp.176, %tmp.177, %tmp.178, %tmp.179, %tmp.180);
+        lputv %add.9 %tmp.181;
+        symbol [ add %add.9 275 12 15 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 276 12 ]
+        %tmp.182 = lgetv %add.9;
+        symbol [ add %tmp.182 276 21 24 ];
+        %tmp.183 = "addHe";
+        %tmp.184 = agetv %tmp.182 %tmp.183;
+        %tmp.185 = as %tmp.184 Numeric;
+        symbol [ Numeric %tmp.185 276 37 44 ];
+        symbol [ toFloat %tmp.186 276 46 53 ];
+        %tmp.186 = getv function %tmp.185 :toFloat;
+        %tmp.187 = invoke %tmp.185 %tmp.186();
+        lputv %addHe.10 %tmp.187;
+        symbol [ addHe %addHe.10 276 12 17 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 277 12 ]
+        %tmp.188 = lgetv %add.9;
+        symbol [ add %tmp.188 277 21 24 ];
+        %tmp.189 = "addO2";
+        %tmp.190 = agetv %tmp.188 %tmp.189;
+        %tmp.191 = as %tmp.190 Numeric;
+        symbol [ Numeric %tmp.191 277 37 44 ];
+        symbol [ toFloat %tmp.192 277 46 53 ];
+        %tmp.192 = getv function %tmp.191 :toFloat;
+        %tmp.193 = invoke %tmp.191 %tmp.192();
+        lputv %addO2.11 %tmp.193;
+        symbol [ addO2 %addO2.11 277 12 17 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 278 12 ]
+        %tmp.194 = lgetv %add.9;
+        symbol [ add %tmp.194 278 22 25 ];
+        %tmp.195 = "addTop";
+        %tmp.196 = agetv %tmp.194 %tmp.195;
+        %tmp.197 = as %tmp.196 Numeric;
+        symbol [ Numeric %tmp.197 278 39 46 ];
+        symbol [ toFloat %tmp.198 278 48 55 ];
+        %tmp.198 = getv function %tmp.197 :toFloat;
+        %tmp.199 = invoke %tmp.197 %tmp.198();
+        lputv %addTop.12 %tmp.199;
+        symbol [ addTop %addTop.12 278 12 18 ];
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_256_34_279_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_253_8_279_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_253_8_279_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 281 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_281_8_288_8_if_stmt:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_281_12_283_22_begin:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_281_12_282_21_begin:
+        %tmp.200 = lgetv %addHe.10;
+        symbol [ addHe %tmp.200 281 12 17 ];
+        %tmp.201 = -0.00001;
+        %tmp.202 = lt %tmp.200 %tmp.201;
+        bt %tmp.202 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_281_8_288_8_if_true;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_282_12_282_21_false:
+        %tmp.203 = lgetv %addO2.11;
+        symbol [ addO2 %tmp.203 282 12 17 ];
+        %tmp.204 = -0.00001;
+        %tmp.205 = lt %tmp.203 %tmp.204;
+        push %tmp.205;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_282_12_282_21_end:
+        %tmp.206 = phi [%tmp.202 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_281_12_282_21_begin] [%tmp.205 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_282_12_282_21_false] [%tmp.206 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_282_12_282_21_end];
+        bt %tmp.206 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_281_8_288_8_if_true;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_283_12_283_22_false:
+        %tmp.207 = lgetv %addTop.12;
+        symbol [ addTop %tmp.207 283 12 18 ];
+        %tmp.208 = -0.00001;
+        %tmp.209 = lt %tmp.207 %tmp.208;
+        push %tmp.209;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_283_12_283_22_end:
+        %tmp.210 = phi [%tmp.206 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_281_12_283_22_begin] [%tmp.209 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_283_12_283_22_false] [%tmp.210 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_283_12_283_22_end];
+        bf %tmp.210 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_281_8_288_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_281_8_288_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_283_31_288_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 285 12 ]
+        %tmp.211 = newd 1;
+        %tmp.212 = "error";
+        %tmp.213 = "Target not achievable with selected top-up gas at this starting pressure.";
+        %tmp.214 = dup %tmp.211;
+        %tmp.215 = aputv %tmp.214 %tmp.212 %tmp.213;
+        ret %tmp.215;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_283_31_288_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_281_8_288_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_281_8_288_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 291 8 ]
+        %tmp.216 = self;
+        symbol [ cleanBar %tmp.217 291 16 24 ];
+        %tmp.217 = getv function %tmp.216 :cleanBar;
+        %tmp.218 = lgetv %addHe.10;
+        symbol [ addHe %tmp.218 291 25 30 ];
+        %tmp.219 = invoke %tmp.216 %tmp.217(%tmp.218);
+        lputv %addHe.10 %tmp.219;
+        symbol [ addHe %addHe.10 291 8 13 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 292 8 ]
+        %tmp.220 = self;
+        symbol [ cleanBar %tmp.221 292 16 24 ];
+        %tmp.221 = getv function %tmp.220 :cleanBar;
+        %tmp.222 = lgetv %addO2.11;
+        symbol [ addO2 %tmp.222 292 25 30 ];
+        %tmp.223 = invoke %tmp.220 %tmp.221(%tmp.222);
+        lputv %addO2.11 %tmp.223;
+        symbol [ addO2 %addO2.11 292 8 13 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 293 8 ]
+        %tmp.224 = self;
+        symbol [ cleanBar %tmp.225 293 17 25 ];
+        %tmp.225 = getv function %tmp.224 :cleanBar;
+        %tmp.226 = lgetv %addTop.12;
+        symbol [ addTop %tmp.226 293 26 32 ];
+        %tmp.227 = invoke %tmp.224 %tmp.225(%tmp.226);
+        lputv %addTop.12 %tmp.227;
+        symbol [ addTop %addTop.12 293 8 14 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 295 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_stop" ]
+        %didDrain.14 = local;
+        symbol [ didDrain %didDrain.14 295 12 20 ];
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_295_24_295_54_begin:
+        %tmp.228 = lgetv %mode;
+        symbol [ mode %tmp.228 295 24 28 ];
+        symbol [ MODE_TOP %tmp.230 295 32 40 ];
+        %tmp.230 = getv ? :MODE_TOP;
+        %tmp.231 = eq %tmp.228 %tmp.230;
+        %tmp.232 = dup %tmp.231;
+        bf %tmp.232 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_295_44_295_54_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_295_44_295_54_true:
+        %tmp.233 = lgetv %Pd.8;
+        symbol [ Pd %tmp.233 295 44 46 ];
+        %tmp.234 = lgetv %Ps.2;
+        symbol [ Ps %tmp.234 295 49 51 ];
+        %tmp.235 = 0.05;
+        %tmp.236 = sub %tmp.234 %tmp.235;
+        %tmp.237 = lt %tmp.233 %tmp.236;
+        %tmp.238 = and %tmp.231 %tmp.237;
+        push %tmp.238;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_295_44_295_54_end:
+        %tmp.239 = phi [%tmp.232 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_295_24_295_54_begin] [%tmp.238 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_295_44_295_54_true] [%tmp.239 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_295_44_295_54_end];
+        lputv %didDrain.14 %tmp.239;
+        symbol [ didDrain %didDrain.14 295 12 20 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 298 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_stop" ]
+        %finalO2Val.15 = local;
+        symbol [ finalO2Val %finalO2Val.15 298 12 22 ];
+        %tmp.240 = self;
+        symbol [ roundToNumber %tmp.241 298 25 38 ];
+        %tmp.241 = getv function %tmp.240 :roundToNumber;
+        %tmp.242 = lgetv %tO2.6;
+        symbol [ tO2 %tmp.242 298 39 42 ];
+        %tmp.243 = 100.0;
+        %tmp.244 = mul %tmp.242 %tmp.243;
+        %tmp.245 = invoke %tmp.240 %tmp.241(%tmp.244);
+        lputv %finalO2Val.15 %tmp.245;
+        symbol [ finalO2Val %finalO2Val.15 298 12 22 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 299 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_stop" ]
+        %finalHeVal.16 = local;
+        symbol [ finalHeVal %finalHeVal.16 299 12 22 ];
+        %tmp.246 = self;
+        symbol [ roundToNumber %tmp.247 299 25 38 ];
+        %tmp.247 = getv function %tmp.246 :roundToNumber;
+        %tmp.248 = lgetv %tHe.7;
+        symbol [ tHe %tmp.248 299 39 42 ];
+        %tmp.249 = 100.0;
+        %tmp.250 = mul %tmp.248 %tmp.249;
+        %tmp.251 = invoke %tmp.246 %tmp.247(%tmp.250);
+        lputv %finalHeVal.16 %tmp.251;
+        symbol [ finalHeVal %finalHeVal.16 299 12 22 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 300 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_stop" ]
+        %startHeVal.17 = local;
+        symbol [ startHeVal %startHeVal.17 300 12 22 ];
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_300_25_300_66_begin:
+        %tmp.252 = lgetv %mode;
+        symbol [ mode %tmp.252 300 26 30 ];
+        symbol [ MODE_TOP %tmp.254 300 34 42 ];
+        %tmp.254 = getv ? :MODE_TOP;
+        %tmp.255 = eq %tmp.252 %tmp.254;
+        bf %tmp.255 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_300_25_300_66_else_false;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_300_25_300_66_true:
+        %tmp.256 = self;
+        symbol [ clampPct %tmp.257 300 46 54 ];
+        %tmp.257 = getv function %tmp.256 :clampPct;
+        %tmp.258 = lgetv %startHe;
+        symbol [ startHe %tmp.258 300 55 62 ];
+        %tmp.259 = invoke %tmp.256 %tmp.257(%tmp.258);
+        push %tmp.259;
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_300_25_300_66_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_300_25_300_66_else_false:
+        %tmp.260 = 0.0;
+        push %tmp.260;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_300_25_300_66_end:
+        %tmp.261 = phi [%tmp.255 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_300_25_300_66_begin] [%tmp.259 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_300_25_300_66_true] [%tmp.260 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_300_25_300_66_else_false] [%tmp.261 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_300_25_300_66_end];
+        lputv %startHeVal.17 %tmp.261;
+        symbol [ startHeVal %startHeVal.17 300 12 22 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 301 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_stop" ]
+        %usingHe.18 = local;
+        symbol [ usingHe %usingHe.18 301 12 19 ];
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_301_23_301_69_begin:
+        %tmp.262 = lgetv %finalHeVal.16;
+        symbol [ finalHeVal %tmp.262 301 23 33 ];
+        %tmp.263 = 0;
+        %tmp.264 = gt %tmp.262 %tmp.263;
+        %tmp.265 = dup %tmp.264;
+        bt %tmp.265 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_301_41_301_69_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_301_41_301_69_false:
+        %tmp.266 = self;
+        symbol [ roundToNumber %tmp.267 301 41 54 ];
+        %tmp.267 = getv function %tmp.266 :roundToNumber;
+        %tmp.268 = lgetv %startHeVal.17;
+        symbol [ startHeVal %tmp.268 301 55 65 ];
+        %tmp.269 = invoke %tmp.266 %tmp.267(%tmp.268);
+        %tmp.270 = 0;
+        %tmp.271 = gt %tmp.269 %tmp.270;
+        %tmp.272 = or %tmp.264 %tmp.271;
+        push %tmp.272;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_301_41_301_69_end:
+        %tmp.273 = phi [%tmp.265 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_301_23_301_69_begin] [%tmp.272 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_301_41_301_69_false] [%tmp.273 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_301_41_301_69_end];
+        lputv %usingHe.18 %tmp.273;
+        symbol [ usingHe %usingHe.18 301 12 19 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 306 8 ]
+        %tmp.274 = newd 13;
+        %tmp.275 = "error";
+        %tmp.276 = null;
+        %tmp.277 = dup %tmp.274;
+        %tmp.278 = aputv %tmp.277 %tmp.275 %tmp.276;
+        %tmp.279 = "didDrain";
+        %tmp.280 = lgetv %didDrain.14;
+        symbol [ didDrain %tmp.280 308 26 34 ];
+        %tmp.281 = dup %tmp.278;
+        %tmp.282 = aputv %tmp.281 %tmp.279 %tmp.280;
+        %tmp.283 = "drainBar";
+        %tmp.284 = self;
+        symbol [ fmtBar %tmp.285 310 26 32 ];
+        %tmp.285 = getv function %tmp.284 :fmtBar;
+        %tmp.286 = lgetv %Pd.8;
+        symbol [ Pd %tmp.286 310 33 35 ];
+        %tmp.287 = invoke %tmp.284 %tmp.285(%tmp.286);
+        %tmp.288 = dup %tmp.282;
+        %tmp.289 = aputv %tmp.288 %tmp.283 %tmp.287;
+        %tmp.290 = "addHe";
+        %tmp.291 = self;
+        symbol [ fmtBar %tmp.292 311 23 29 ];
+        %tmp.292 = getv function %tmp.291 :fmtBar;
+        %tmp.293 = lgetv %addHe.10;
+        symbol [ addHe %tmp.293 311 30 35 ];
+        %tmp.294 = invoke %tmp.291 %tmp.292(%tmp.293);
+        %tmp.295 = dup %tmp.289;
+        %tmp.296 = aputv %tmp.295 %tmp.290 %tmp.294;
+        %tmp.297 = "addO2";
+        %tmp.298 = self;
+        symbol [ fmtBar %tmp.299 312 23 29 ];
+        %tmp.299 = getv function %tmp.298 :fmtBar;
+        %tmp.300 = lgetv %addO2.11;
+        symbol [ addO2 %tmp.300 312 30 35 ];
+        %tmp.301 = invoke %tmp.298 %tmp.299(%tmp.300);
+        %tmp.302 = dup %tmp.296;
+        %tmp.303 = aputv %tmp.302 %tmp.297 %tmp.301;
+        %tmp.304 = "addTop";
+        %tmp.305 = self;
+        symbol [ fmtBar %tmp.306 313 24 30 ];
+        %tmp.306 = getv function %tmp.305 :fmtBar;
+        %tmp.307 = lgetv %addTop.12;
+        symbol [ addTop %tmp.307 313 31 37 ];
+        %tmp.308 = invoke %tmp.305 %tmp.306(%tmp.307);
+        %tmp.309 = dup %tmp.303;
+        %tmp.310 = aputv %tmp.309 %tmp.304 %tmp.308;
+        %tmp.311 = "drainBarValue";
+        %tmp.312 = lgetv %Pd.8;
+        symbol [ Pd %tmp.312 315 31 33 ];
+        %tmp.313 = dup %tmp.310;
+        %tmp.314 = aputv %tmp.313 %tmp.311 %tmp.312;
+        %tmp.315 = "addHeValue";
+        %tmp.316 = lgetv %addHe.10;
+        symbol [ addHe %tmp.316 316 28 33 ];
+        %tmp.317 = dup %tmp.314;
+        %tmp.318 = aputv %tmp.317 %tmp.315 %tmp.316;
+        %tmp.319 = "addO2Value";
+        %tmp.320 = lgetv %addO2.11;
+        symbol [ addO2 %tmp.320 317 28 33 ];
+        %tmp.321 = dup %tmp.318;
+        %tmp.322 = aputv %tmp.321 %tmp.319 %tmp.320;
+        %tmp.323 = "addTopValue";
+        %tmp.324 = lgetv %addTop.12;
+        symbol [ addTop %tmp.324 318 29 35 ];
+        %tmp.325 = dup %tmp.322;
+        %tmp.326 = aputv %tmp.325 %tmp.323 %tmp.324;
+        %tmp.327 = "usingHe";
+        %tmp.328 = lgetv %usingHe.18;
+        symbol [ usingHe %tmp.328 320 25 32 ];
+        %tmp.329 = dup %tmp.326;
+        %tmp.330 = aputv %tmp.329 %tmp.327 %tmp.328;
+        %tmp.331 = "finalO2";
+        %tmp.332 = lgetv %finalO2Val.15;
+        symbol [ finalO2Val %tmp.332 321 25 35 ];
+        %tmp.333 = dup %tmp.330;
+        %tmp.334 = aputv %tmp.333 %tmp.331 %tmp.332;
+        %tmp.335 = "finalHe";
+        %tmp.336 = lgetv %finalHeVal.16;
+        symbol [ finalHeVal %tmp.336 322 25 35 ];
+        %tmp.337 = dup %tmp.334;
+        %tmp.338 = aputv %tmp.337 %tmp.335 %tmp.336;
+        ret %tmp.338;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_194_20_324_4_stop:
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc"; @line = 329; @symbol_functiondef = [plan,329,13,17]; @symbol_param<0> = [mixPct,330,8,14]; @symbol_param<0>_type<0> = [Numeric,330,18,25]; @symbol_param<1> = [depthMeters,331,8,19]; @symbol_param<1>_type<0> = [Numeric,331,23,30]; @symbol_param<2> = [ppO2,332,8,12]; @symbol_param<2>_type<0> = [Numeric,332,16,23]; @symbol_return<0> = [Dictionary,333,9,19]; ]
+    function plan(mixPct as Numeric, depthMeters as Numeric, ppO2 as Numeric) as Dictionary or Null {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_333_28_361_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 335 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_333_28_361_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_333_28_361_4_stop" ]
+        %fo2.1 = local;
+        symbol [ fo2 %fo2.1 335 12 15 ];
+        %tmp.1 = self;
+        symbol [ frac %tmp.2 335 18 22 ];
+        %tmp.2 = getv function %tmp.1 :frac;
+        %tmp.3 = lgetv %mixPct;
+        symbol [ mixPct %tmp.3 335 23 29 ];
+        %tmp.4 = invoke %tmp.1 %tmp.2(%tmp.3);
+        lputv %fo2.1 %tmp.4;
+        symbol [ fo2 %fo2.1 335 12 15 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 336 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_333_28_361_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_333_28_361_4_stop" ]
+        %depth.2 = local;
+        symbol [ depth %depth.2 336 12 17 ];
+        %tmp.5 = self;
+        symbol [ asFloat %tmp.6 336 20 27 ];
+        %tmp.6 = getv function %tmp.5 :asFloat;
+        %tmp.7 = lgetv %depthMeters;
+        symbol [ depthMeters %tmp.7 336 28 39 ];
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        lputv %depth.2 %tmp.8;
+        symbol [ depth %depth.2 336 12 17 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 337 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_333_28_361_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_333_28_361_4_stop" ]
+        %ppo2Value.3 = local;
+        symbol [ ppo2Value %ppo2Value.3 337 12 21 ];
+        %tmp.9 = self;
+        symbol [ asFloat %tmp.10 337 24 31 ];
+        %tmp.10 = getv function %tmp.9 :asFloat;
+        %tmp.11 = lgetv %ppO2;
+        symbol [ ppO2 %tmp.11 337 32 36 ];
+        %tmp.12 = invoke %tmp.9 %tmp.10(%tmp.11);
+        lputv %ppo2Value.3 %tmp.12;
+        symbol [ ppo2Value %ppo2Value.3 337 12 21 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 339 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_339_8_341_8_if_stmt:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_339_12_339_54_begin:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_339_12_339_39_begin:
+        %tmp.13 = lgetv %fo2.1;
+        symbol [ fo2 %tmp.13 339 12 15 ];
+        %tmp.14 = 0.0;
+        %tmp.15 = lte %tmp.13 %tmp.14;
+        bt %tmp.15 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_339_8_341_8_if_true;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_339_26_339_39_false:
+        %tmp.16 = lgetv %ppo2Value.3;
+        symbol [ ppo2Value %tmp.16 339 26 35 ];
+        %tmp.17 = 0.0;
+        %tmp.18 = lte %tmp.16 %tmp.17;
+        push %tmp.18;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_339_26_339_39_end:
+        %tmp.19 = phi [%tmp.15 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_339_12_339_39_begin] [%tmp.18 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_339_26_339_39_false] [%tmp.19 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_339_26_339_39_end];
+        bt %tmp.19 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_339_8_341_8_if_true;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_339_46_339_54_false:
+        %tmp.20 = lgetv %depth.2;
+        symbol [ depth %tmp.20 339 46 51 ];
+        %tmp.21 = 0.0;
+        %tmp.22 = lt %tmp.20 %tmp.21;
+        push %tmp.22;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_339_46_339_54_end:
+        %tmp.23 = phi [%tmp.19 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_339_12_339_54_begin] [%tmp.22 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_339_46_339_54_false] [%tmp.23 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_339_46_339_54_end];
+        bf %tmp.23 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_339_8_341_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_339_8_341_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_339_59_341_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 340 12 ]
+        %tmp.24 = null;
+        ret %tmp.24;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_339_59_341_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_339_8_341_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_339_8_341_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 343 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_333_28_361_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_333_28_361_4_stop" ]
+        %amb.4 = local;
+        symbol [ amb %amb.4 343 12 15 ];
+        %tmp.25 = 1.0;
+        %tmp.26 = lgetv %depth.2;
+        symbol [ depth %tmp.26 343 25 30 ];
+        %tmp.27 = 10.0;
+        %tmp.28 = div %tmp.26 %tmp.27;
+        %tmp.29 = add %tmp.25 %tmp.28;
+        lputv %amb.4 %tmp.29;
+        symbol [ amb %amb.4 343 12 15 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 344 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_333_28_361_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_333_28_361_4_stop" ]
+        %mod.5 = local;
+        symbol [ mod %mod.5 344 12 15 ];
+        %tmp.30 = 10.0;
+        %tmp.31 = lgetv %ppo2Value.3;
+        symbol [ ppo2Value %tmp.31 344 27 36 ];
+        %tmp.32 = lgetv %fo2.1;
+        symbol [ fo2 %tmp.32 344 39 42 ];
+        %tmp.33 = div %tmp.31 %tmp.32;
+        %tmp.34 = 1.0;
+        %tmp.35 = sub %tmp.33 %tmp.34;
+        %tmp.36 = mul %tmp.30 %tmp.35;
+        lputv %mod.5 %tmp.36;
+        symbol [ mod %mod.5 344 12 15 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 345 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_333_28_361_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_333_28_361_4_stop" ]
+        %best.6 = local;
+        symbol [ best %best.6 345 12 16 ];
+        %tmp.37 = lgetv %ppo2Value.3;
+        symbol [ ppo2Value %tmp.37 345 20 29 ];
+        %tmp.38 = lgetv %amb.4;
+        symbol [ amb %tmp.38 345 32 35 ];
+        %tmp.39 = div %tmp.37 %tmp.38;
+        %tmp.40 = 100.0;
+        %tmp.41 = mul %tmp.39 %tmp.40;
+        lputv %best.6 %tmp.41;
+        symbol [ best %best.6 345 12 16 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 346 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_333_28_361_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_333_28_361_4_stop" ]
+        %ead.7 = local;
+        symbol [ ead %ead.7 346 12 15 ];
+        %tmp.42 = lgetv %depth.2;
+        symbol [ depth %tmp.42 346 20 25 ];
+        %tmp.43 = 10.0;
+        %tmp.44 = add %tmp.42 %tmp.43;
+        %tmp.45 = 1.0;
+        %tmp.46 = lgetv %fo2.1;
+        symbol [ fo2 %tmp.46 346 44 47 ];
+        %tmp.47 = sub %tmp.45 %tmp.46;
+        %tmp.48 = 0.79;
+        %tmp.49 = div %tmp.47 %tmp.48;
+        %tmp.50 = mul %tmp.44 %tmp.49;
+        %tmp.51 = 10.0;
+        %tmp.52 = sub %tmp.50 %tmp.51;
+        lputv %ead.7 %tmp.52;
+        symbol [ ead %ead.7 346 12 15 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 348 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_333_28_361_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_333_28_361_4_stop" ]
+        %modClamped.8 = local;
+        symbol [ modClamped %modClamped.8 348 12 22 ];
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_348_25_348_45_begin:
+        %tmp.53 = lgetv %mod.5;
+        symbol [ mod %tmp.53 348 26 29 ];
+        %tmp.54 = 0.0;
+        %tmp.55 = lt %tmp.53 %tmp.54;
+        bf %tmp.55 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_348_25_348_45_else_false;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_348_25_348_45_true:
+        %tmp.56 = 0.0;
+        push %tmp.56;
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_348_25_348_45_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_348_25_348_45_else_false:
+        %tmp.57 = lgetv %mod.5;
+        symbol [ mod %tmp.57 348 45 48 ];
+        push %tmp.57;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_348_25_348_45_end:
+        %tmp.58 = phi [%tmp.55 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_348_25_348_45_begin] [%tmp.56 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_348_25_348_45_true] [%tmp.57 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_348_25_348_45_else_false] [%tmp.58 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_348_25_348_45_end];
+        lputv %modClamped.8 %tmp.58;
+        symbol [ modClamped %modClamped.8 348 12 22 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 349 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_333_28_361_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_333_28_361_4_stop" ]
+        %eadClamped.9 = local;
+        symbol [ eadClamped %eadClamped.9 349 12 22 ];
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_349_25_349_45_begin:
+        %tmp.59 = lgetv %ead.7;
+        symbol [ ead %tmp.59 349 26 29 ];
+        %tmp.60 = 0.0;
+        %tmp.61 = lt %tmp.59 %tmp.60;
+        bf %tmp.61 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_349_25_349_45_else_false;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_349_25_349_45_true:
+        %tmp.62 = 0.0;
+        push %tmp.62;
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_349_25_349_45_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_349_25_349_45_else_false:
+        %tmp.63 = lgetv %ead.7;
+        symbol [ ead %tmp.63 349 45 48 ];
+        push %tmp.63;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_349_25_349_45_end:
+        %tmp.64 = phi [%tmp.61 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_349_25_349_45_begin] [%tmp.62 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_349_25_349_45_true] [%tmp.63 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_349_25_349_45_else_false] [%tmp.64 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_349_25_349_45_end];
+        lputv %eadClamped.9 %tmp.64;
+        symbol [ eadClamped %eadClamped.9 349 12 22 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc" 351 8 ]
+        %tmp.65 = newd 6;
+        %tmp.66 = "mod";
+        %tmp.67 = lgetv %modClamped.8;
+        symbol [ modClamped %tmp.67 352 21 31 ];
+        symbol [ format %tmp.68 352 32 38 ];
+        %tmp.68 = getv function %tmp.67 :format;
+        %tmp.69 = "%.1f";
+        %tmp.70 = invoke %tmp.67 %tmp.68(%tmp.69);
+        %tmp.71 = dup %tmp.65;
+        %tmp.72 = aputv %tmp.71 %tmp.66 %tmp.70;
+        %tmp.73 = "best";
+        %tmp.74 = self;
+        symbol [ roundToNumber %tmp.75 353 22 35 ];
+        %tmp.75 = getv function %tmp.74 :roundToNumber;
+        %tmp.76 = lgetv %best.6;
+        symbol [ best %tmp.76 353 36 40 ];
+        %tmp.77 = invoke %tmp.74 %tmp.75(%tmp.76);
+        %tmp.78 = dup %tmp.72;
+        %tmp.79 = aputv %tmp.78 %tmp.73 %tmp.77;
+        %tmp.80 = "ead";
+        %tmp.81 = lgetv %eadClamped.9;
+        symbol [ eadClamped %tmp.81 354 21 31 ];
+        symbol [ format %tmp.82 354 32 38 ];
+        %tmp.82 = getv function %tmp.81 :format;
+        %tmp.83 = "%.1f";
+        %tmp.84 = invoke %tmp.81 %tmp.82(%tmp.83);
+        %tmp.85 = dup %tmp.79;
+        %tmp.86 = aputv %tmp.85 %tmp.80 %tmp.84;
+        %tmp.87 = "modValue";
+        %tmp.88 = lgetv %modClamped.8;
+        symbol [ modClamped %tmp.88 357 26 36 ];
+        %tmp.89 = dup %tmp.86;
+        %tmp.90 = aputv %tmp.89 %tmp.87 %tmp.88;
+        %tmp.91 = "bestValue";
+        %tmp.92 = lgetv %best.6;
+        symbol [ best %tmp.92 358 27 31 ];
+        %tmp.93 = dup %tmp.90;
+        %tmp.94 = aputv %tmp.93 %tmp.91 %tmp.92;
+        %tmp.95 = "eadValue";
+        %tmp.96 = lgetv %eadClamped.9;
+        symbol [ eadClamped %tmp.96 359 26 36 ];
+        %tmp.97 = dup %tmp.94;
+        %tmp.98 = aputv %tmp.97 %tmp.95 %tmp.96;
+        ret %tmp.98;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasCalculator_mc_333_28_361_4_stop:
+    }
+}
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasCalculator.mc"; @line = 1; ]
+<init> {
+}

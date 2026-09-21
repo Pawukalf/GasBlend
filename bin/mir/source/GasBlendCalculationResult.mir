@@ -1,0 +1,869 @@
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [Graphics,1,13,21]; @symbol_usingAlias = [Gfx,1,25,28]; ]
+using Toybox.Graphics as :Gfx;
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [WatchUi,2,13,20]; @symbol_usingAlias = [Ui,2,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc"; @line = 4; @symbol_classdef = [GasBlendCalculationResults,4,6,32]; @symbol_extends<0> = [Ui,4,41,43]; @symbol_extends<1> = [View,4,44,48]; ]
+class GasBlendCalculationResults extends Ui.View {
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc"; @line = 4; ]
+    <init> {
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc"; @line = 4; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc"; @line = 6; @position = 16; @symbol_vardef = [_white,6,16,22]; ]
+    private
+    var _white = 0xFFFFFF;
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc"; @line = 7; @position = 16; @symbol_vardef = [_black,7,16,22]; ]
+    private
+    var _black = 0x000000;
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc"; @line = 8; @position = 16; @symbol_vardef = [_cyan,8,16,21]; ]
+    private
+    var _cyan = 0x00D9E8;
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc"; @line = 9; @position = 16; @symbol_vardef = [_green,9,16,22]; ]
+    private
+    var _green = 0x00FF7F;
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc"; @line = 10; @position = 16; @symbol_vardef = [_grey,10,16,21]; ]
+    private
+    var _grey = 0xA0A0A0;
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc"; @line = 12; @symbol_functiondef = [initialize,12,13,23]; ]
+    function initialize() as Void {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_12_26_14_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 13 8 ]
+        symbol [ View %tmp.2 13 8 12 ];
+        %tmp.2 = getv ? :View;
+        symbol [ initialize %tmp.3 13 13 23 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_12_26_14_4_stop:
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc"; @line = 16; @symbol_functiondef = [onLayout,16,13,21]; @symbol_param<0> = [dc,16,22,24]; ]
+    function onLayout(dc) {
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc"; @line = 19; @symbol_functiondef = [onShow,19,13,19]; ]
+    function onShow() {
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc"; @line = 22; @symbol_functiondef = [onHide,22,13,19]; ]
+    function onHide() {
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc"; @line = 25; @symbol_functiondef = [onUpdate,25,13,21]; @symbol_param<0> = [dc,25,22,24]; ]
+    function onUpdate(dc) {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_25_26_121_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 27 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_25_26_121_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_25_26_121_4_stop" ]
+        %w.1 = local;
+        symbol [ w %w.1 27 12 13 ];
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 27 16 18 ];
+        symbol [ getWidth %tmp.2 27 19 27 ];
+        %tmp.2 = getv function %tmp.1 :getWidth;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %w.1 %tmp.3;
+        symbol [ w %w.1 27 12 13 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 28 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_25_26_121_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_25_26_121_4_stop" ]
+        %h.2 = local;
+        symbol [ h %h.2 28 12 13 ];
+        %tmp.4 = lgetv %dc;
+        symbol [ dc %tmp.4 28 16 18 ];
+        symbol [ getHeight %tmp.5 28 19 28 ];
+        %tmp.5 = getv function %tmp.4 :getHeight;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %h.2 %tmp.6;
+        symbol [ h %h.2 28 12 13 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 29 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_25_26_121_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_25_26_121_4_stop" ]
+        %cx.3 = local;
+        symbol [ cx %cx.3 29 12 14 ];
+        %tmp.7 = lgetv %w.1;
+        symbol [ w %tmp.7 29 17 18 ];
+        %tmp.8 = 2;
+        %tmp.9 = div %tmp.7 %tmp.8;
+        lputv %cx.3 %tmp.9;
+        symbol [ cx %cx.3 29 12 14 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 31 8 ]
+        %tmp.10 = lgetv %dc;
+        symbol [ dc %tmp.10 31 8 10 ];
+        symbol [ setColor %tmp.11 31 11 19 ];
+        %tmp.11 = getv function %tmp.10 :setColor;
+        symbol [ _black %tmp.13 32 12 18 ];
+        %tmp.13 = getv ? :_black;
+        symbol [ _black %tmp.15 33 12 18 ];
+        %tmp.15 = getv ? :_black;
+        invoke %tmp.10 %tmp.11(%tmp.13, %tmp.15);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 36 8 ]
+        %tmp.16 = lgetv %dc;
+        symbol [ dc %tmp.16 36 8 10 ];
+        symbol [ clear %tmp.17 36 11 16 ];
+        %tmp.17 = getv function %tmp.16 :clear;
+        invoke %tmp.16 %tmp.17();
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 38 8 ]
+        %tmp.18 = self;
+        symbol [ drawHeader %tmp.19 38 8 18 ];
+        %tmp.19 = getv function %tmp.18 :drawHeader;
+        %tmp.20 = lgetv %dc;
+        symbol [ dc %tmp.20 39 12 14 ];
+        %tmp.21 = lgetv %cx.3;
+        symbol [ cx %tmp.21 40 12 14 ];
+        %tmp.22 = lgetv %w.1;
+        symbol [ w %tmp.22 41 12 13 ];
+        %tmp.23 = lgetv %h.2;
+        symbol [ h %tmp.23 42 12 13 ];
+        invoke %tmp.18 %tmp.19(%tmp.20, %tmp.21, %tmp.22, %tmp.23);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 57 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_25_26_121_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_25_26_121_4_stop" ]
+        %firstRowY.4 = local;
+        symbol [ firstRowY %firstRowY.4 57 12 21 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 59 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_59_8_77_8_if_stmt:
+        symbol [ GasBlendData %tmp.25 59 12 24 ];
+        %tmp.25 = getv ? :GasBlendData;
+        symbol [ requiresDrain %tmp.26 59 25 38 ];
+        %tmp.26 = getv %tmp.25 :requiresDrain;
+        bf %tmp.26 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_59_8_77_8_if_else_false;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_59_8_77_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_59_40_73_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 61 12 ]
+        %tmp.27 = lgetv %h.2;
+        symbol [ h %tmp.27 62 16 17 ];
+        %tmp.28 = 365;
+        %tmp.29 = mul %tmp.27 %tmp.28;
+        %tmp.30 = 1000;
+        %tmp.31 = div %tmp.29 %tmp.30;
+        lputv %firstRowY.4 %tmp.31;
+        symbol [ firstRowY %firstRowY.4 61 12 21 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 64 12 ]
+        %tmp.32 = self;
+        symbol [ drawResultRow %tmp.33 64 12 25 ];
+        %tmp.33 = getv function %tmp.32 :drawResultRow;
+        %tmp.34 = lgetv %dc;
+        symbol [ dc %tmp.34 65 16 18 ];
+        %tmp.35 = lgetv %cx.3;
+        symbol [ cx %tmp.35 66 16 18 ];
+        %tmp.36 = lgetv %w.1;
+        symbol [ w %tmp.36 67 16 17 ];
+        %tmp.37 = lgetv %firstRowY.4;
+        symbol [ firstRowY %tmp.37 68 16 25 ];
+        %tmp.38 = "Drain to";
+        symbol [ GasBlendData %tmp.40 70 16 28 ];
+        %tmp.40 = getv ? :GasBlendData;
+        symbol [ drainTo %tmp.41 70 29 36 ];
+        %tmp.41 = getv %tmp.40 :drainTo;
+        symbol [ format %tmp.42 70 37 43 ];
+        %tmp.42 = getv function %tmp.41 :format;
+        %tmp.43 = "%.1f";
+        %tmp.44 = invoke %tmp.41 %tmp.42(%tmp.43);
+        %tmp.45 = " bar";
+        %tmp.46 = add %tmp.44 %tmp.45;
+        invoke %tmp.32 %tmp.33(%tmp.34, %tmp.35, %tmp.36, %tmp.37, %tmp.38, %tmp.46);
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_59_40_73_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_59_8_77_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_59_8_77_8_if_else_false:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_73_15_77_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 75 12 ]
+        %tmp.47 = lgetv %h.2;
+        symbol [ h %tmp.47 76 16 17 ];
+        %tmp.48 = 400;
+        %tmp.49 = mul %tmp.47 %tmp.48;
+        %tmp.50 = 1000;
+        %tmp.51 = div %tmp.49 %tmp.50;
+        lputv %firstRowY.4 %tmp.51;
+        symbol [ firstRowY %firstRowY.4 75 12 21 ];
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_73_15_77_8_stop:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_59_8_77_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 79 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_25_26_121_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_25_26_121_4_stop" ]
+        %rowSpacing.5 = local;
+        symbol [ rowSpacing %rowSpacing.5 79 12 22 ];
+        %tmp.52 = lgetv %h.2;
+        symbol [ h %tmp.52 80 12 13 ];
+        %tmp.53 = 82;
+        %tmp.54 = mul %tmp.52 %tmp.53;
+        %tmp.55 = 1000;
+        %tmp.56 = div %tmp.54 %tmp.55;
+        lputv %rowSpacing.5 %tmp.56;
+        symbol [ rowSpacing %rowSpacing.5 79 12 22 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 82 8 ]
+        %tmp.57 = self;
+        symbol [ drawResultRow %tmp.58 82 8 21 ];
+        %tmp.58 = getv function %tmp.57 :drawResultRow;
+        %tmp.59 = lgetv %dc;
+        symbol [ dc %tmp.59 83 12 14 ];
+        %tmp.60 = lgetv %cx.3;
+        symbol [ cx %tmp.60 84 12 14 ];
+        %tmp.61 = lgetv %w.1;
+        symbol [ w %tmp.61 85 12 13 ];
+        %tmp.62 = lgetv %firstRowY.4;
+        symbol [ firstRowY %tmp.62 86 12 21 ];
+        %tmp.63 = lgetv %rowSpacing.5;
+        symbol [ rowSpacing %tmp.63 86 24 34 ];
+        %tmp.64 = add %tmp.62 %tmp.63;
+        %tmp.65 = "Add O2";
+        symbol [ GasBlendData %tmp.67 88 12 24 ];
+        %tmp.67 = getv ? :GasBlendData;
+        symbol [ addO2 %tmp.68 88 25 30 ];
+        %tmp.68 = getv %tmp.67 :addO2;
+        symbol [ format %tmp.69 88 31 37 ];
+        %tmp.69 = getv function %tmp.68 :format;
+        %tmp.70 = "%.1f";
+        %tmp.71 = invoke %tmp.68 %tmp.69(%tmp.70);
+        %tmp.72 = " bar";
+        %tmp.73 = add %tmp.71 %tmp.72;
+        invoke %tmp.57 %tmp.58(%tmp.59, %tmp.60, %tmp.61, %tmp.64, %tmp.65, %tmp.73);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 91 8 ]
+        %tmp.74 = self;
+        symbol [ drawResultRow %tmp.75 91 8 21 ];
+        %tmp.75 = getv function %tmp.74 :drawResultRow;
+        %tmp.76 = lgetv %dc;
+        symbol [ dc %tmp.76 92 12 14 ];
+        %tmp.77 = lgetv %cx.3;
+        symbol [ cx %tmp.77 93 12 14 ];
+        %tmp.78 = lgetv %w.1;
+        symbol [ w %tmp.78 94 12 13 ];
+        %tmp.79 = lgetv %firstRowY.4;
+        symbol [ firstRowY %tmp.79 95 12 21 ];
+        %tmp.80 = lgetv %rowSpacing.5;
+        symbol [ rowSpacing %tmp.80 95 24 34 ];
+        %tmp.81 = 2;
+        %tmp.82 = mul %tmp.80 %tmp.81;
+        %tmp.83 = add %tmp.79 %tmp.82;
+        %tmp.84 = "Add He";
+        symbol [ GasBlendData %tmp.86 97 12 24 ];
+        %tmp.86 = getv ? :GasBlendData;
+        symbol [ addHe %tmp.87 97 25 30 ];
+        %tmp.87 = getv %tmp.86 :addHe;
+        symbol [ format %tmp.88 97 31 37 ];
+        %tmp.88 = getv function %tmp.87 :format;
+        %tmp.89 = "%.1f";
+        %tmp.90 = invoke %tmp.87 %tmp.88(%tmp.89);
+        %tmp.91 = " bar";
+        %tmp.92 = add %tmp.90 %tmp.91;
+        invoke %tmp.74 %tmp.75(%tmp.76, %tmp.77, %tmp.78, %tmp.83, %tmp.84, %tmp.92);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 100 8 ]
+        %tmp.93 = self;
+        symbol [ drawResultRow %tmp.94 100 8 21 ];
+        %tmp.94 = getv function %tmp.93 :drawResultRow;
+        %tmp.95 = lgetv %dc;
+        symbol [ dc %tmp.95 101 12 14 ];
+        %tmp.96 = lgetv %cx.3;
+        symbol [ cx %tmp.96 102 12 14 ];
+        %tmp.97 = lgetv %w.1;
+        symbol [ w %tmp.97 103 12 13 ];
+        %tmp.98 = lgetv %firstRowY.4;
+        symbol [ firstRowY %tmp.98 104 12 21 ];
+        %tmp.99 = lgetv %rowSpacing.5;
+        symbol [ rowSpacing %tmp.99 104 24 34 ];
+        %tmp.100 = 3;
+        %tmp.101 = mul %tmp.99 %tmp.100;
+        %tmp.102 = add %tmp.98 %tmp.101;
+        %tmp.103 = "Add top-up";
+        symbol [ GasBlendData %tmp.105 106 12 24 ];
+        %tmp.105 = getv ? :GasBlendData;
+        symbol [ addTopup %tmp.106 106 25 33 ];
+        %tmp.106 = getv %tmp.105 :addTopup;
+        symbol [ format %tmp.107 106 34 40 ];
+        %tmp.107 = getv function %tmp.106 :format;
+        %tmp.108 = "%.1f";
+        %tmp.109 = invoke %tmp.106 %tmp.107(%tmp.108);
+        %tmp.110 = " bar";
+        %tmp.111 = add %tmp.109 %tmp.110;
+        invoke %tmp.93 %tmp.94(%tmp.95, %tmp.96, %tmp.97, %tmp.102, %tmp.103, %tmp.111);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 109 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_25_26_121_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_25_26_121_4_stop" ]
+        %dividerY.6 = local;
+        symbol [ dividerY %dividerY.6 109 12 20 ];
+        %tmp.112 = lgetv %firstRowY.4;
+        symbol [ firstRowY %tmp.112 110 12 21 ];
+        %tmp.113 = lgetv %rowSpacing.5;
+        symbol [ rowSpacing %tmp.113 111 12 22 ];
+        %tmp.114 = 4;
+        %tmp.115 = mul %tmp.113 %tmp.114;
+        %tmp.116 = add %tmp.112 %tmp.115;
+        %tmp.117 = lgetv %h.2;
+        symbol [ h %tmp.117 112 12 13 ];
+        %tmp.118 = 18;
+        %tmp.119 = mul %tmp.117 %tmp.118;
+        %tmp.120 = 1000;
+        %tmp.121 = div %tmp.119 %tmp.120;
+        %tmp.122 = sub %tmp.116 %tmp.121;
+        lputv %dividerY.6 %tmp.122;
+        symbol [ dividerY %dividerY.6 109 12 20 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 114 8 ]
+        %tmp.123 = self;
+        symbol [ drawFinalMix %tmp.124 114 8 20 ];
+        %tmp.124 = getv function %tmp.123 :drawFinalMix;
+        %tmp.125 = lgetv %dc;
+        symbol [ dc %tmp.125 115 12 14 ];
+        %tmp.126 = lgetv %cx.3;
+        symbol [ cx %tmp.126 116 12 14 ];
+        %tmp.127 = lgetv %w.1;
+        symbol [ w %tmp.127 117 12 13 ];
+        %tmp.128 = lgetv %h.2;
+        symbol [ h %tmp.128 118 12 13 ];
+        %tmp.129 = lgetv %dividerY.6;
+        symbol [ dividerY %tmp.129 119 12 20 ];
+        invoke %tmp.123 %tmp.124(%tmp.125, %tmp.126, %tmp.127, %tmp.128, %tmp.129);
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_25_26_121_4_stop:
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc"; @line = 128; @symbol_functiondef = [drawHeader,128,13,23]; @symbol_param<0> = [dc,129,8,10]; @symbol_param<1> = [cx,130,8,10]; @symbol_param<2> = [w,131,8,9]; @symbol_param<3> = [h,132,8,9]; ]
+    function drawHeader(dc, cx, w, h) {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_133_6_194_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 135 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_133_6_194_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_133_6_194_4_stop" ]
+        %titleFont.1 = local;
+        symbol [ titleFont %titleFont.1 135 12 21 ];
+        symbol [ Gfx %tmp.1 136 12 15 ];
+        %tmp.1 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.2 136 16 26 ];
+        %tmp.2 = getv %tmp.1 :FONT_LARGE;
+        lputv %titleFont.1 %tmp.2;
+        symbol [ titleFont %titleFont.1 135 12 21 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 138 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_133_6_194_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_133_6_194_4_stop" ]
+        %subtitleFont.2 = local;
+        symbol [ subtitleFont %subtitleFont.2 138 12 24 ];
+        symbol [ Gfx %tmp.3 139 12 15 ];
+        %tmp.3 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.4 139 16 26 ];
+        %tmp.4 = getv %tmp.3 :FONT_XTINY;
+        lputv %subtitleFont.2 %tmp.4;
+        symbol [ subtitleFont %subtitleFont.2 138 12 24 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 141 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_133_6_194_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_133_6_194_4_stop" ]
+        %titleY.3 = local;
+        symbol [ titleY %titleY.3 141 12 18 ];
+        %tmp.5 = lgetv %h;
+        symbol [ h %tmp.5 142 12 13 ];
+        %tmp.6 = 75;
+        %tmp.7 = mul %tmp.5 %tmp.6;
+        %tmp.8 = 1000;
+        %tmp.9 = div %tmp.7 %tmp.8;
+        lputv %titleY.3 %tmp.9;
+        symbol [ titleY %titleY.3 141 12 18 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 144 8 ]
+        %tmp.10 = lgetv %dc;
+        symbol [ dc %tmp.10 144 8 10 ];
+        symbol [ setColor %tmp.11 144 11 19 ];
+        %tmp.11 = getv function %tmp.10 :setColor;
+        symbol [ _white %tmp.13 145 12 18 ];
+        %tmp.13 = getv ? :_white;
+        symbol [ Gfx %tmp.14 146 12 15 ];
+        %tmp.14 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.15 146 16 33 ];
+        %tmp.15 = getv %tmp.14 :COLOR_TRANSPARENT;
+        invoke %tmp.10 %tmp.11(%tmp.13, %tmp.15);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 149 8 ]
+        %tmp.16 = lgetv %dc;
+        symbol [ dc %tmp.16 149 8 10 ];
+        symbol [ drawText %tmp.17 149 11 19 ];
+        %tmp.17 = getv function %tmp.16 :drawText;
+        %tmp.18 = lgetv %cx;
+        symbol [ cx %tmp.18 150 12 14 ];
+        %tmp.19 = lgetv %titleY.3;
+        symbol [ titleY %tmp.19 151 12 18 ];
+        %tmp.20 = lgetv %titleFont.1;
+        symbol [ titleFont %tmp.20 152 12 21 ];
+        %tmp.21 = "TOP-UP";
+        symbol [ Gfx %tmp.22 154 12 15 ];
+        %tmp.22 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.23 154 16 35 ];
+        %tmp.23 = getv %tmp.22 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.16 %tmp.17(%tmp.18, %tmp.19, %tmp.20, %tmp.21, %tmp.23);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 157 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_133_6_194_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_133_6_194_4_stop" ]
+        %titleHeight.4 = local;
+        symbol [ titleHeight %titleHeight.4 157 12 23 ];
+        %tmp.24 = lgetv %dc;
+        symbol [ dc %tmp.24 158 12 14 ];
+        symbol [ getFontHeight %tmp.25 158 15 28 ];
+        %tmp.25 = getv function %tmp.24 :getFontHeight;
+        %tmp.26 = lgetv %titleFont.1;
+        symbol [ titleFont %tmp.26 158 29 38 ];
+        %tmp.27 = invoke %tmp.24 %tmp.25(%tmp.26);
+        lputv %titleHeight.4 %tmp.27;
+        symbol [ titleHeight %titleHeight.4 157 12 23 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 160 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_133_6_194_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_133_6_194_4_stop" ]
+        %dividerY.5 = local;
+        symbol [ dividerY %dividerY.5 160 12 20 ];
+        %tmp.28 = lgetv %titleY.3;
+        symbol [ titleY %tmp.28 161 12 18 ];
+        %tmp.29 = lgetv %titleHeight.4;
+        symbol [ titleHeight %tmp.29 162 12 23 ];
+        %tmp.30 = add %tmp.28 %tmp.29;
+        %tmp.31 = 1;
+        %tmp.32 = sub %tmp.30 %tmp.31;
+        lputv %dividerY.5 %tmp.32;
+        symbol [ dividerY %dividerY.5 160 12 20 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 165 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_133_6_194_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_133_6_194_4_stop" ]
+        %dividerWidth.6 = local;
+        symbol [ dividerWidth %dividerWidth.6 165 12 24 ];
+        %tmp.33 = lgetv %w;
+        symbol [ w %tmp.33 166 12 13 ];
+        %tmp.34 = 40;
+        %tmp.35 = mul %tmp.33 %tmp.34;
+        %tmp.36 = 100;
+        %tmp.37 = div %tmp.35 %tmp.36;
+        lputv %dividerWidth.6 %tmp.37;
+        symbol [ dividerWidth %dividerWidth.6 165 12 24 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 168 8 ]
+        %tmp.38 = lgetv %dc;
+        symbol [ dc %tmp.38 168 8 10 ];
+        symbol [ setColor %tmp.39 168 11 19 ];
+        %tmp.39 = getv function %tmp.38 :setColor;
+        symbol [ _cyan %tmp.41 169 12 17 ];
+        %tmp.41 = getv ? :_cyan;
+        symbol [ _cyan %tmp.43 170 12 17 ];
+        %tmp.43 = getv ? :_cyan;
+        invoke %tmp.38 %tmp.39(%tmp.41, %tmp.43);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 173 8 ]
+        %tmp.44 = lgetv %dc;
+        symbol [ dc %tmp.44 173 8 10 ];
+        symbol [ setPenWidth %tmp.45 173 11 22 ];
+        %tmp.45 = getv function %tmp.44 :setPenWidth;
+        %tmp.46 = 3;
+        invoke %tmp.44 %tmp.45(%tmp.46);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 175 8 ]
+        %tmp.47 = lgetv %dc;
+        symbol [ dc %tmp.47 175 8 10 ];
+        symbol [ drawLine %tmp.48 175 11 19 ];
+        %tmp.48 = getv function %tmp.47 :drawLine;
+        %tmp.49 = lgetv %cx;
+        symbol [ cx %tmp.49 176 12 14 ];
+        %tmp.50 = lgetv %dividerWidth.6;
+        symbol [ dividerWidth %tmp.50 176 17 29 ];
+        %tmp.51 = 2;
+        %tmp.52 = div %tmp.50 %tmp.51;
+        %tmp.53 = sub %tmp.49 %tmp.52;
+        %tmp.54 = lgetv %dividerY.5;
+        symbol [ dividerY %tmp.54 177 12 20 ];
+        %tmp.55 = lgetv %cx;
+        symbol [ cx %tmp.55 178 12 14 ];
+        %tmp.56 = lgetv %dividerWidth.6;
+        symbol [ dividerWidth %tmp.56 178 17 29 ];
+        %tmp.57 = 2;
+        %tmp.58 = div %tmp.56 %tmp.57;
+        %tmp.59 = add %tmp.55 %tmp.58;
+        %tmp.60 = lgetv %dividerY.5;
+        symbol [ dividerY %tmp.60 179 12 20 ];
+        invoke %tmp.47 %tmp.48(%tmp.53, %tmp.54, %tmp.59, %tmp.60);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 182 8 ]
+        %tmp.61 = lgetv %dc;
+        symbol [ dc %tmp.61 182 8 10 ];
+        symbol [ setColor %tmp.62 182 11 19 ];
+        %tmp.62 = getv function %tmp.61 :setColor;
+        symbol [ _white %tmp.64 183 12 18 ];
+        %tmp.64 = getv ? :_white;
+        symbol [ Gfx %tmp.65 184 12 15 ];
+        %tmp.65 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.66 184 16 33 ];
+        %tmp.66 = getv %tmp.65 :COLOR_TRANSPARENT;
+        invoke %tmp.61 %tmp.62(%tmp.64, %tmp.66);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 187 8 ]
+        %tmp.67 = lgetv %dc;
+        symbol [ dc %tmp.67 187 8 10 ];
+        symbol [ drawText %tmp.68 187 11 19 ];
+        %tmp.68 = getv function %tmp.67 :drawText;
+        %tmp.69 = lgetv %cx;
+        symbol [ cx %tmp.69 188 12 14 ];
+        %tmp.70 = lgetv %dividerY.5;
+        symbol [ dividerY %tmp.70 189 12 20 ];
+        %tmp.71 = 6;
+        %tmp.72 = add %tmp.70 %tmp.71;
+        %tmp.73 = lgetv %subtitleFont.2;
+        symbol [ subtitleFont %tmp.73 190 12 24 ];
+        %tmp.74 = "BLEND RESULTS";
+        symbol [ Gfx %tmp.75 192 12 15 ];
+        %tmp.75 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.76 192 16 35 ];
+        %tmp.76 = getv %tmp.75 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.67 %tmp.68(%tmp.69, %tmp.72, %tmp.73, %tmp.74, %tmp.76);
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_133_6_194_4_stop:
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc"; @line = 201; @symbol_functiondef = [drawResultRow,201,13,26]; @symbol_param<0> = [dc,202,8,10]; @symbol_param<1> = [cx,203,8,10]; @symbol_param<2> = [w,204,8,9]; @symbol_param<3> = [centerY,205,8,15]; @symbol_param<4> = [label,206,8,13]; @symbol_param<5> = [value,207,8,13]; ]
+    function drawResultRow(dc, cx, w, centerY, label, value) {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_208_6_259_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 210 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_208_6_259_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_208_6_259_4_stop" ]
+        %rowWidth.1 = local;
+        symbol [ rowWidth %rowWidth.1 210 12 20 ];
+        %tmp.1 = lgetv %w;
+        symbol [ w %tmp.1 211 12 13 ];
+        %tmp.2 = 70;
+        %tmp.3 = mul %tmp.1 %tmp.2;
+        %tmp.4 = 100;
+        %tmp.5 = div %tmp.3 %tmp.4;
+        lputv %rowWidth.1 %tmp.5;
+        symbol [ rowWidth %rowWidth.1 210 12 20 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 213 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_208_6_259_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_208_6_259_4_stop" ]
+        %rowX.2 = local;
+        symbol [ rowX %rowX.2 213 12 16 ];
+        %tmp.6 = lgetv %cx;
+        symbol [ cx %tmp.6 214 12 14 ];
+        %tmp.7 = lgetv %rowWidth.1;
+        symbol [ rowWidth %tmp.7 215 12 20 ];
+        %tmp.8 = 2;
+        %tmp.9 = div %tmp.7 %tmp.8;
+        %tmp.10 = sub %tmp.6 %tmp.9;
+        lputv %rowX.2 %tmp.10;
+        symbol [ rowX %rowX.2 213 12 16 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 217 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_208_6_259_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_208_6_259_4_stop" ]
+        %labelX.3 = local;
+        symbol [ labelX %labelX.3 217 12 18 ];
+        %tmp.11 = lgetv %rowX.2;
+        symbol [ rowX %tmp.11 218 12 16 ];
+        lputv %labelX.3 %tmp.11;
+        symbol [ labelX %labelX.3 217 12 18 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 220 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_208_6_259_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_208_6_259_4_stop" ]
+        %valueX.4 = local;
+        symbol [ valueX %valueX.4 220 12 18 ];
+        %tmp.12 = lgetv %rowX.2;
+        symbol [ rowX %tmp.12 221 12 16 ];
+        %tmp.13 = lgetv %rowWidth.1;
+        symbol [ rowWidth %tmp.13 222 12 20 ];
+        %tmp.14 = add %tmp.12 %tmp.13;
+        lputv %valueX.4 %tmp.14;
+        symbol [ valueX %valueX.4 220 12 18 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 224 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_208_6_259_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_208_6_259_4_stop" ]
+        %font.5 = local;
+        symbol [ font %font.5 224 12 16 ];
+        symbol [ Gfx %tmp.15 225 12 15 ];
+        %tmp.15 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.16 225 16 26 ];
+        %tmp.16 = getv %tmp.15 :FONT_XTINY;
+        lputv %font.5 %tmp.16;
+        symbol [ font %font.5 224 12 16 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 227 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_208_6_259_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_208_6_259_4_stop" ]
+        %fontHeight.6 = local;
+        symbol [ fontHeight %fontHeight.6 227 12 22 ];
+        %tmp.17 = lgetv %dc;
+        symbol [ dc %tmp.17 228 12 14 ];
+        symbol [ getFontHeight %tmp.18 228 15 28 ];
+        %tmp.18 = getv function %tmp.17 :getFontHeight;
+        %tmp.19 = lgetv %font.5;
+        symbol [ font %tmp.19 228 29 33 ];
+        %tmp.20 = invoke %tmp.17 %tmp.18(%tmp.19);
+        lputv %fontHeight.6 %tmp.20;
+        symbol [ fontHeight %fontHeight.6 227 12 22 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 230 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_208_6_259_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_208_6_259_4_stop" ]
+        %textY.7 = local;
+        symbol [ textY %textY.7 230 12 17 ];
+        %tmp.21 = lgetv %centerY;
+        symbol [ centerY %tmp.21 231 12 19 ];
+        %tmp.22 = lgetv %fontHeight.6;
+        symbol [ fontHeight %tmp.22 232 12 22 ];
+        %tmp.23 = 2;
+        %tmp.24 = div %tmp.22 %tmp.23;
+        %tmp.25 = sub %tmp.21 %tmp.24;
+        lputv %textY.7 %tmp.25;
+        symbol [ textY %textY.7 230 12 17 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 234 8 ]
+        %tmp.26 = lgetv %dc;
+        symbol [ dc %tmp.26 234 8 10 ];
+        symbol [ setColor %tmp.27 234 11 19 ];
+        %tmp.27 = getv function %tmp.26 :setColor;
+        symbol [ _white %tmp.29 235 12 18 ];
+        %tmp.29 = getv ? :_white;
+        symbol [ Gfx %tmp.30 236 12 15 ];
+        %tmp.30 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.31 236 16 33 ];
+        %tmp.31 = getv %tmp.30 :COLOR_TRANSPARENT;
+        invoke %tmp.26 %tmp.27(%tmp.29, %tmp.31);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 239 8 ]
+        %tmp.32 = lgetv %dc;
+        symbol [ dc %tmp.32 239 8 10 ];
+        symbol [ drawText %tmp.33 239 11 19 ];
+        %tmp.33 = getv function %tmp.32 :drawText;
+        %tmp.34 = lgetv %labelX.3;
+        symbol [ labelX %tmp.34 240 12 18 ];
+        %tmp.35 = lgetv %textY.7;
+        symbol [ textY %tmp.35 241 12 17 ];
+        %tmp.36 = lgetv %font.5;
+        symbol [ font %tmp.36 242 12 16 ];
+        %tmp.37 = lgetv %label;
+        symbol [ label %tmp.37 243 12 17 ];
+        symbol [ Gfx %tmp.38 244 12 15 ];
+        %tmp.38 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_LEFT %tmp.39 244 16 33 ];
+        %tmp.39 = getv %tmp.38 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.32 %tmp.33(%tmp.34, %tmp.35, %tmp.36, %tmp.37, %tmp.39);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 247 8 ]
+        %tmp.40 = lgetv %dc;
+        symbol [ dc %tmp.40 247 8 10 ];
+        symbol [ setColor %tmp.41 247 11 19 ];
+        %tmp.41 = getv function %tmp.40 :setColor;
+        symbol [ _white %tmp.43 248 12 18 ];
+        %tmp.43 = getv ? :_white;
+        symbol [ Gfx %tmp.44 249 12 15 ];
+        %tmp.44 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.45 249 16 33 ];
+        %tmp.45 = getv %tmp.44 :COLOR_TRANSPARENT;
+        invoke %tmp.40 %tmp.41(%tmp.43, %tmp.45);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 252 8 ]
+        %tmp.46 = lgetv %dc;
+        symbol [ dc %tmp.46 252 8 10 ];
+        symbol [ drawText %tmp.47 252 11 19 ];
+        %tmp.47 = getv function %tmp.46 :drawText;
+        %tmp.48 = lgetv %valueX.4;
+        symbol [ valueX %tmp.48 253 12 18 ];
+        %tmp.49 = lgetv %textY.7;
+        symbol [ textY %tmp.49 254 12 17 ];
+        %tmp.50 = lgetv %font.5;
+        symbol [ font %tmp.50 255 12 16 ];
+        %tmp.51 = lgetv %value;
+        symbol [ value %tmp.51 256 12 17 ];
+        symbol [ Gfx %tmp.52 257 12 15 ];
+        %tmp.52 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_RIGHT %tmp.53 257 16 34 ];
+        %tmp.53 = getv %tmp.52 :TEXT_JUSTIFY_RIGHT;
+        invoke %tmp.46 %tmp.47(%tmp.48, %tmp.49, %tmp.50, %tmp.51, %tmp.53);
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_208_6_259_4_stop:
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc"; @line = 266; @symbol_functiondef = [drawFinalMix,266,13,25]; @symbol_param<0> = [dc,267,8,10]; @symbol_param<1> = [cx,268,8,10]; @symbol_param<2> = [w,269,8,9]; @symbol_param<3> = [h,270,8,9]; @symbol_param<4> = [dividerY,271,8,16]; ]
+    function drawFinalMix(dc, cx, w, h, dividerY) {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_272_6_359_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 274 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_272_6_359_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_272_6_359_4_stop" ]
+        %dividerWidth.1 = local;
+        symbol [ dividerWidth %dividerWidth.1 274 12 24 ];
+        %tmp.1 = lgetv %w;
+        symbol [ w %tmp.1 275 12 13 ];
+        %tmp.2 = 70;
+        %tmp.3 = mul %tmp.1 %tmp.2;
+        %tmp.4 = 100;
+        %tmp.5 = div %tmp.3 %tmp.4;
+        lputv %dividerWidth.1 %tmp.5;
+        symbol [ dividerWidth %dividerWidth.1 274 12 24 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 277 8 ]
+        %tmp.6 = lgetv %dc;
+        symbol [ dc %tmp.6 277 8 10 ];
+        symbol [ setColor %tmp.7 277 11 19 ];
+        %tmp.7 = getv function %tmp.6 :setColor;
+        symbol [ _grey %tmp.9 278 12 17 ];
+        %tmp.9 = getv ? :_grey;
+        symbol [ _grey %tmp.11 279 12 17 ];
+        %tmp.11 = getv ? :_grey;
+        invoke %tmp.6 %tmp.7(%tmp.9, %tmp.11);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 282 8 ]
+        %tmp.12 = lgetv %dc;
+        symbol [ dc %tmp.12 282 8 10 ];
+        symbol [ setPenWidth %tmp.13 282 11 22 ];
+        %tmp.13 = getv function %tmp.12 :setPenWidth;
+        %tmp.14 = 2;
+        invoke %tmp.12 %tmp.13(%tmp.14);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 284 8 ]
+        %tmp.15 = lgetv %dc;
+        symbol [ dc %tmp.15 284 8 10 ];
+        symbol [ drawLine %tmp.16 284 11 19 ];
+        %tmp.16 = getv function %tmp.15 :drawLine;
+        %tmp.17 = lgetv %cx;
+        symbol [ cx %tmp.17 285 12 14 ];
+        %tmp.18 = lgetv %dividerWidth.1;
+        symbol [ dividerWidth %tmp.18 285 17 29 ];
+        %tmp.19 = 2;
+        %tmp.20 = div %tmp.18 %tmp.19;
+        %tmp.21 = sub %tmp.17 %tmp.20;
+        %tmp.22 = lgetv %dividerY;
+        symbol [ dividerY %tmp.22 286 12 20 ];
+        %tmp.23 = lgetv %cx;
+        symbol [ cx %tmp.23 287 12 14 ];
+        %tmp.24 = lgetv %dividerWidth.1;
+        symbol [ dividerWidth %tmp.24 287 17 29 ];
+        %tmp.25 = 2;
+        %tmp.26 = div %tmp.24 %tmp.25;
+        %tmp.27 = add %tmp.23 %tmp.26;
+        %tmp.28 = lgetv %dividerY;
+        symbol [ dividerY %tmp.28 288 12 20 ];
+        invoke %tmp.15 %tmp.16(%tmp.21, %tmp.22, %tmp.27, %tmp.28);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 291 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_272_6_359_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_272_6_359_4_stop" ]
+        %labelFont.2 = local;
+        symbol [ labelFont %labelFont.2 291 12 21 ];
+        symbol [ Gfx %tmp.29 292 12 15 ];
+        %tmp.29 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.30 292 16 26 ];
+        %tmp.30 = getv %tmp.29 :FONT_XTINY;
+        lputv %labelFont.2 %tmp.30;
+        symbol [ labelFont %labelFont.2 291 12 21 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 294 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_272_6_359_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_272_6_359_4_stop" ]
+        %mixFont.3 = local;
+        symbol [ mixFont %mixFont.3 294 12 19 ];
+        symbol [ Gfx %tmp.31 295 12 15 ];
+        %tmp.31 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.32 295 16 26 ];
+        %tmp.32 = getv %tmp.31 :FONT_LARGE;
+        lputv %mixFont.3 %tmp.32;
+        symbol [ mixFont %mixFont.3 294 12 19 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 297 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_272_6_359_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_272_6_359_4_stop" ]
+        %labelY.4 = local;
+        symbol [ labelY %labelY.4 297 12 18 ];
+        %tmp.33 = lgetv %dividerY;
+        symbol [ dividerY %tmp.33 298 12 20 ];
+        %tmp.34 = lgetv %h;
+        symbol [ h %tmp.34 299 12 13 ];
+        %tmp.35 = 18;
+        %tmp.36 = mul %tmp.34 %tmp.35;
+        %tmp.37 = 1000;
+        %tmp.38 = div %tmp.36 %tmp.37;
+        %tmp.39 = add %tmp.33 %tmp.38;
+        lputv %labelY.4 %tmp.39;
+        symbol [ labelY %labelY.4 297 12 18 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 301 8 ]
+        %tmp.40 = lgetv %dc;
+        symbol [ dc %tmp.40 301 8 10 ];
+        symbol [ setColor %tmp.41 301 11 19 ];
+        %tmp.41 = getv function %tmp.40 :setColor;
+        symbol [ _white %tmp.43 302 12 18 ];
+        %tmp.43 = getv ? :_white;
+        symbol [ Gfx %tmp.44 303 12 15 ];
+        %tmp.44 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.45 303 16 33 ];
+        %tmp.45 = getv %tmp.44 :COLOR_TRANSPARENT;
+        invoke %tmp.40 %tmp.41(%tmp.43, %tmp.45);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 306 8 ]
+        %tmp.46 = lgetv %dc;
+        symbol [ dc %tmp.46 306 8 10 ];
+        symbol [ drawText %tmp.47 306 11 19 ];
+        %tmp.47 = getv function %tmp.46 :drawText;
+        %tmp.48 = lgetv %cx;
+        symbol [ cx %tmp.48 307 12 14 ];
+        %tmp.49 = lgetv %labelY.4;
+        symbol [ labelY %tmp.49 308 12 18 ];
+        %tmp.50 = lgetv %labelFont.2;
+        symbol [ labelFont %tmp.50 309 12 21 ];
+        %tmp.51 = "FINAL MIX";
+        symbol [ Gfx %tmp.52 311 12 15 ];
+        %tmp.52 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.53 311 16 35 ];
+        %tmp.53 = getv %tmp.52 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.46 %tmp.47(%tmp.48, %tmp.49, %tmp.50, %tmp.51, %tmp.53);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 314 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_272_6_359_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_272_6_359_4_stop" ]
+        %mixText.5 = local;
+        symbol [ mixText %mixText.5 314 12 19 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 326 8 ]
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_326_8_337_8_if_stmt:
+        symbol [ GasBlendData %tmp.55 326 12 24 ];
+        %tmp.55 = getv ? :GasBlendData;
+        symbol [ targetHe %tmp.56 326 25 33 ];
+        %tmp.56 = getv %tmp.55 :targetHe;
+        %tmp.57 = 0;
+        %tmp.58 = gt %tmp.56 %tmp.57;
+        bf %tmp.58 @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_326_8_337_8_if_else_false;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_326_8_337_8_if_true:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_326_39_333_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 328 12 ]
+        symbol [ GasBlendData %tmp.60 329 16 28 ];
+        %tmp.60 = getv ? :GasBlendData;
+        symbol [ targetO2 %tmp.61 329 29 37 ];
+        %tmp.61 = getv %tmp.60 :targetO2;
+        symbol [ format %tmp.62 329 38 44 ];
+        %tmp.62 = getv function %tmp.61 :format;
+        %tmp.63 = "%d";
+        %tmp.64 = invoke %tmp.61 %tmp.62(%tmp.63);
+        %tmp.65 = "/";
+        %tmp.66 = add %tmp.64 %tmp.65;
+        symbol [ GasBlendData %tmp.68 331 16 28 ];
+        %tmp.68 = getv ? :GasBlendData;
+        symbol [ targetHe %tmp.69 331 29 37 ];
+        %tmp.69 = getv %tmp.68 :targetHe;
+        symbol [ format %tmp.70 331 38 44 ];
+        %tmp.70 = getv function %tmp.69 :format;
+        %tmp.71 = "%d";
+        %tmp.72 = invoke %tmp.69 %tmp.70(%tmp.71);
+        %tmp.73 = add %tmp.66 %tmp.72;
+        lputv %mixText.5 %tmp.73;
+        symbol [ mixText %mixText.5 328 12 19 ];
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_326_39_333_8_stop:
+        goto @C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_326_8_337_8_if_end;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_326_8_337_8_if_else_false:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_333_15_337_8_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 335 12 ]
+        symbol [ GasBlendData %tmp.75 336 16 28 ];
+        %tmp.75 = getv ? :GasBlendData;
+        symbol [ targetO2 %tmp.76 336 29 37 ];
+        %tmp.76 = getv %tmp.75 :targetO2;
+        symbol [ format %tmp.77 336 38 44 ];
+        %tmp.77 = getv function %tmp.76 :format;
+        %tmp.78 = "%d";
+        %tmp.79 = invoke %tmp.76 %tmp.77(%tmp.78);
+        lputv %mixText.5 %tmp.79;
+        symbol [ mixText %mixText.5 335 12 19 ];
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_333_15_337_8_stop:
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_326_8_337_8_if_end:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 339 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_272_6_359_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_272_6_359_4_stop" ]
+        %labelHeight.6 = local;
+        symbol [ labelHeight %labelHeight.6 339 12 23 ];
+        %tmp.80 = lgetv %dc;
+        symbol [ dc %tmp.80 340 12 14 ];
+        symbol [ getFontHeight %tmp.81 340 15 28 ];
+        %tmp.81 = getv function %tmp.80 :getFontHeight;
+        %tmp.82 = lgetv %labelFont.2;
+        symbol [ labelFont %tmp.82 340 29 38 ];
+        %tmp.83 = invoke %tmp.80 %tmp.81(%tmp.82);
+        lputv %labelHeight.6 %tmp.83;
+        symbol [ labelHeight %labelHeight.6 339 12 23 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 342 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_272_6_359_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_272_6_359_4_stop" ]
+        %mixY.7 = local;
+        symbol [ mixY %mixY.7 342 12 16 ];
+        %tmp.84 = lgetv %labelY.4;
+        symbol [ labelY %tmp.84 343 12 18 ];
+        %tmp.85 = lgetv %labelHeight.6;
+        symbol [ labelHeight %tmp.85 344 12 23 ];
+        %tmp.86 = add %tmp.84 %tmp.85;
+        %tmp.87 = lgetv %h;
+        symbol [ h %tmp.87 345 12 13 ];
+        %tmp.88 = 5;
+        %tmp.89 = mul %tmp.87 %tmp.88;
+        %tmp.90 = 1000;
+        %tmp.91 = div %tmp.89 %tmp.90;
+        %tmp.92 = add %tmp.86 %tmp.91;
+        lputv %mixY.7 %tmp.92;
+        symbol [ mixY %mixY.7 342 12 16 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 347 8 ]
+        %tmp.93 = lgetv %dc;
+        symbol [ dc %tmp.93 347 8 10 ];
+        symbol [ setColor %tmp.94 347 11 19 ];
+        %tmp.94 = getv function %tmp.93 :setColor;
+        symbol [ _green %tmp.96 348 12 18 ];
+        %tmp.96 = getv ? :_green;
+        symbol [ Gfx %tmp.97 349 12 15 ];
+        %tmp.97 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.98 349 16 33 ];
+        %tmp.98 = getv %tmp.97 :COLOR_TRANSPARENT;
+        invoke %tmp.93 %tmp.94(%tmp.96, %tmp.98);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc" 352 8 ]
+        %tmp.99 = lgetv %dc;
+        symbol [ dc %tmp.99 352 8 10 ];
+        symbol [ drawText %tmp.100 352 11 19 ];
+        %tmp.100 = getv function %tmp.99 :drawText;
+        %tmp.101 = lgetv %cx;
+        symbol [ cx %tmp.101 353 12 14 ];
+        %tmp.102 = lgetv %mixY.7;
+        symbol [ mixY %tmp.102 354 12 16 ];
+        %tmp.103 = lgetv %mixFont.3;
+        symbol [ mixFont %tmp.103 355 12 19 ];
+        %tmp.104 = lgetv %mixText.5;
+        symbol [ mixText %tmp.104 356 12 19 ];
+        symbol [ Gfx %tmp.105 357 12 15 ];
+        %tmp.105 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.106 357 16 35 ];
+        %tmp.106 = getv %tmp.105 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.99 %tmp.100(%tmp.101, %tmp.102, %tmp.103, %tmp.104, %tmp.106);
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendCalculationResult_mc_272_6_359_4_stop:
+    }
+}
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendCalculationResult.mc"; @line = 1; ]
+<init> {
+}

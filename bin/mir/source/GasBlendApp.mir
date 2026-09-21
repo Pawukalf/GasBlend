@@ -1,0 +1,60 @@
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendApp.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [Application,1,13,24]; @symbol_usingAlias = [App,1,28,31]; ]
+using Toybox.Application as :App;
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendApp.mc"; @line = 3; @symbol_classdef = [GasBlendApp,3,6,17]; @symbol_extends<0> = [App,3,26,29]; @symbol_extends<1> = [AppBase,3,30,37]; ]
+class GasBlendApp extends App.AppBase {
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendApp.mc"; @line = 3; ]
+    <init> {
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendApp.mc"; @line = 3; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendApp.mc"; @line = 5; @symbol_functiondef = [initialize,5,13,23]; ]
+    function initialize() as Void {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendApp_mc_5_26_7_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendApp.mc" 6 8 ]
+        symbol [ AppBase %tmp.2 6 8 15 ];
+        %tmp.2 = getv ? :AppBase;
+        symbol [ initialize %tmp.3 6 16 26 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendApp_mc_5_26_7_4_stop:
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendApp.mc"; @line = 9; @symbol_functiondef = [onStart,9,13,20]; @symbol_param<0> = [state,9,21,26]; ]
+    function onStart(state) {
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendApp.mc"; @line = 12; @symbol_functiondef = [onStop,12,13,19]; @symbol_param<0> = [state,12,20,25]; ]
+    function onStop(state) {
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendApp.mc"; @line = 15; @symbol_functiondef = [getInitialView,15,13,27]; ]
+    function getInitialView() {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendApp_mc_15_30_22_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendApp.mc" 16 8 ]
+        [ "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendApp_mc_15_30_22_4_start" "C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendApp_mc_15_30_22_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 16 12 16 ];
+        symbol [ GasBlendView %tmp.4 16 23 35 ];
+        %tmp.4 = getv ? :GasBlendView;
+        %tmp.1 = newc %tmp.4 ();
+        lputv %view.1 %tmp.1;
+        symbol [ view %view.1 16 12 16 ];
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendApp.mc" 18 8 ]
+        %tmp.5 = newa 2;
+        %tmp.6 = lgetv %view.1;
+        symbol [ view %tmp.6 19 12 16 ];
+        %tmp.7 = dup %tmp.5;
+        %tmp.8 = aputv %tmp.7 0 %tmp.6;
+        symbol [ GasBlendDelegate %tmp.12 20 16 32 ];
+        %tmp.12 = getv ? :GasBlendDelegate;
+        %tmp.13 = lgetv %view.1;
+        symbol [ view %tmp.13 20 33 37 ];
+        %tmp.9 = newc %tmp.12 (%tmp.13);
+        %tmp.14 = dup %tmp.8;
+        %tmp.15 = aputv %tmp.14 1 %tmp.9;
+        ret %tmp.15;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendApp_mc_15_30_22_4_stop:
+    }
+}
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendApp.mc"; @line = 1; ]
+<init> {
+}

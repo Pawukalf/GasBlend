@@ -1,0 +1,62 @@
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendErrorDelegate.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; @symbol_usingAlias = [Ui,1,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendErrorDelegate.mc"; @line = 3; @symbol_classdef = [GasBlendErrorDelegate,3,6,27]; @symbol_extends<0> = [Ui,3,36,38]; @symbol_extends<1> = [BehaviorDelegate,3,39,55]; ]
+class GasBlendErrorDelegate extends Ui.BehaviorDelegate {
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendErrorDelegate.mc"; @line = 3; ]
+    <init> {
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendErrorDelegate.mc"; @line = 3; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendErrorDelegate.mc"; @line = 5; @symbol_functiondef = [initialize,5,13,23]; ]
+    function initialize() as Void {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendErrorDelegate_mc_5_26_7_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendErrorDelegate.mc" 6 8 ]
+        symbol [ BehaviorDelegate %tmp.2 6 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 6 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendErrorDelegate_mc_5_26_7_4_stop:
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendErrorDelegate.mc"; @line = 9; @symbol_functiondef = [onBack,9,13,19]; ]
+    function onBack() {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendErrorDelegate_mc_9_22_16_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendErrorDelegate.mc" 11 8 ]
+        symbol [ Ui %tmp.1 11 8 10 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.2 11 11 18 ];
+        %tmp.2 = getv function %tmp.1 :popView;
+        symbol [ Ui %tmp.3 12 12 14 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_RIGHT %tmp.4 12 15 26 ];
+        %tmp.4 = getv %tmp.3 :SLIDE_RIGHT;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendErrorDelegate.mc" 15 8 ]
+        %tmp.5 = true;
+        ret %tmp.5;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendErrorDelegate_mc_9_22_16_4_stop:
+    }
+    [ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendErrorDelegate.mc"; @line = 18; @symbol_functiondef = [onSelect,18,13,21]; ]
+    function onSelect() {
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendErrorDelegate_mc_18_24_25_4_start:
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendErrorDelegate.mc" 20 8 ]
+        symbol [ Ui %tmp.1 20 8 10 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.2 20 11 18 ];
+        %tmp.2 = getv function %tmp.1 :popView;
+        symbol [ Ui %tmp.3 21 12 14 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_RIGHT %tmp.4 21 15 26 ];
+        %tmp.4 = getv %tmp.3 :SLIDE_RIGHT;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+[ "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendErrorDelegate.mc" 24 8 ]
+        %tmp.5 = true;
+        ret %tmp.5;
+C__Users_filip_Documents_Garmin_Apps_GasBlend_GasBlend_source_GasBlendErrorDelegate_mc_18_24_25_4_stop:
+    }
+}
+[ @file = "C:\Users\filip\Documents\Garmin Apps\GasBlend\GasBlend\source\GasBlendErrorDelegate.mc"; @line = 1; ]
+<init> {
+}
