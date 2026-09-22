@@ -1,12 +1,12 @@
 # Garmin MK3i — GasBlend
 
+GasBlend is a gas blending calculator for Garmin Descent dive computers.
+
 📥 Download: https://sydneydiving.com.au/b/k712f
 
 ☕ Buy Me a Coffee: https://buymeacoffee.com/sydneydiving
 
 ---
-
-GasBlend is a gas blending calculator for Garmin Descent dive computers.
 
 Designed for recreational and technical divers, it calculates oxygen, helium, and air additions required to achieve a desired Nitrox or Trimix blend using partial pressure blending.
 
