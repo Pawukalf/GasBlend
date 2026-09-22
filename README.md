@@ -2,7 +2,7 @@
 
 GasBlend is a gas blending calculator for Garmin Descent dive computers.
 
-📥 Download: https://sydneydiving.com.au/b/k712f
+📥 Download: https://sydneydiving.com.au/b/WOeEK
 
 ☕ Buy Me a Coffee: https://buymeacoffee.com/sydneydiving
 
