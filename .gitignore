@@ -1,1 +1,4 @@
+/bin/
 /Test 51mm.bat
+*.prg
+*.debug.xml

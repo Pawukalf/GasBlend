@@ -3,14 +3,25 @@ using Toybox.WatchUi as Ui;
 
 class GasBlendCalculationResults extends Ui.View {
 
+    // false = show individual gas additions
+    // true  = show cumulative cylinder pressures
+    private var _showFillPressures = false;
+
+    // false = TOP-UP calculation
+    // true  = EMPTY calculation
+    private var _isEmptyBlend = false;
+
     private var _white = 0xFFFFFF;
     private var _black = 0x000000;
     private var _cyan = 0x00D9E8;
     private var _green = 0x00FF7F;
     private var _grey = 0xA0A0A0;
 
-    function initialize() {
+    function initialize(isEmptyBlend) {
         View.initialize();
+
+        _isEmptyBlend =
+            isEmptyBlend;
     }
 
     function onLayout(dc) {
@@ -23,7 +34,6 @@ class GasBlendCalculationResults extends Ui.View {
     }
 
     function onUpdate(dc) {
-
         var w = dc.getWidth();
         var h = dc.getHeight();
         var cx = w / 2;
@@ -42,22 +52,9 @@ class GasBlendCalculationResults extends Ui.View {
             h
         );
 
-        /*
-         * When draining is required, four result rows
-         * are displayed:
-         *
-         * Drain to
-         * Add O2
-         * Add He
-         * Add top-up
-         *
-         * When draining is not required, only the three
-         * addition rows are displayed.
-         */
         var firstRowY;
 
         if (GasBlendData.requiresDrain) {
-
             firstRowY =
                 h * 365 / 1000;
 
@@ -69,9 +66,7 @@ class GasBlendCalculationResults extends Ui.View {
                 "Drain to",
                 GasBlendData.drainTo.format("%.1f") + " bar"
             );
-
         } else {
-
             firstRowY =
                 h * 400 / 1000;
         }
@@ -79,32 +74,23 @@ class GasBlendCalculationResults extends Ui.View {
         var rowSpacing =
             h * 82 / 1000;
 
-        drawResultRow(
-            dc,
-            cx,
-            w,
-            firstRowY + rowSpacing,
-            "Add O2",
-            GasBlendData.addO2.format("%.1f") + " bar"
-        );
-
-        drawResultRow(
-            dc,
-            cx,
-            w,
-            firstRowY + rowSpacing * 2,
-            "Add He",
-            GasBlendData.addHe.format("%.1f") + " bar"
-        );
-
-        drawResultRow(
-            dc,
-            cx,
-            w,
-            firstRowY + rowSpacing * 3,
-            "Add top-up",
-            GasBlendData.addTopup.format("%.1f") + " bar"
-        );
+        if (_showFillPressures) {
+            drawPressureResults(
+                dc,
+                cx,
+                w,
+                firstRowY,
+                rowSpacing
+            );
+        } else {
+            drawAdditionResults(
+                dc,
+                cx,
+                w,
+                firstRowY,
+                rowSpacing
+            );
+        }
 
         var dividerY =
             firstRowY +
@@ -120,6 +106,148 @@ class GasBlendCalculationResults extends Ui.View {
         );
     }
 
+    // =======================================================
+    // ADDITION RESULTS
+    // =======================================================
+
+    function drawAdditionResults(
+        dc,
+        cx,
+        w,
+        firstRowY,
+        rowSpacing
+    ) {
+        drawResultRow(
+            dc,
+            cx,
+            w,
+            firstRowY + rowSpacing,
+            "Add O2",
+            GasBlendData.addO2.format("%.1f") + " bar"
+        );
+
+        // Do not display helium when no helium is required.
+        if (GasBlendData.addHe > 0.05) {
+            drawResultRow(
+                dc,
+                cx,
+                w,
+                firstRowY + rowSpacing * 2,
+                "Add He",
+                GasBlendData.addHe.format("%.1f") + " bar"
+            );
+        }
+
+        // Keep top-up visible even when no top-up is required.
+        drawResultRow(
+            dc,
+            cx,
+            w,
+            firstRowY + rowSpacing * 3,
+            "Add top-up",
+            GasBlendData.addTopup.format("%.1f") + " bar"
+        );
+    }
+
+    // =======================================================
+    // PRESSURE RESULTS
+    // =======================================================
+
+    function drawPressureResults(
+        dc,
+        cx,
+        w,
+        firstRowY,
+        rowSpacing
+    ) {
+        var basePressure;
+
+        if (_isEmptyBlend) {
+            basePressure =
+                0.0;
+        } else if (GasBlendData.requiresDrain) {
+            basePressure =
+                GasBlendData.drainTo;
+        } else {
+            basePressure =
+                GasBlendData.startPressure.toFloat();
+        }
+
+        var oxygenPressure =
+            basePressure +
+            GasBlendData.addO2;
+
+        var heliumPressure =
+            oxygenPressure +
+            GasBlendData.addHe;
+
+        var finalPressure =
+            heliumPressure +
+            GasBlendData.addTopup;
+
+        // Oxygen pressure
+        if (GasBlendData.addO2 > 0.05) {
+            drawResultRow(
+                dc,
+                cx,
+                w,
+                firstRowY + rowSpacing,
+                "O2 to",
+                oxygenPressure.format("%.1f") + " bar"
+            );
+        } else {
+            drawResultRow(
+                dc,
+                cx,
+                w,
+                firstRowY + rowSpacing,
+                "O2 to",
+                "-"
+            );
+        }
+
+        // Helium pressure
+        if (GasBlendData.addHe > 0.05) {
+            drawResultRow(
+                dc,
+                cx,
+                w,
+                firstRowY + rowSpacing * 2,
+                "He to",
+                heliumPressure.format("%.1f") + " bar"
+            );
+        } else {
+            drawResultRow(
+                dc,
+                cx,
+                w,
+                firstRowY + rowSpacing * 2,
+                "He to",
+                "-"
+            );
+        }
+
+        // Final top-up pressure
+        if (GasBlendData.addTopup > 0.05) {
+            drawResultRow(
+                dc,
+                cx,
+                w,
+                firstRowY + rowSpacing * 3,
+                "Top-up to",
+                finalPressure.format("%.1f") + " bar"
+            );
+        } else {
+            drawResultRow(
+                dc,
+                cx,
+                w,
+                firstRowY + rowSpacing * 3,
+                "Top-up to",
+                "-"
+            );
+        }
+    }
 
     // =======================================================
     // HEADER
@@ -131,7 +259,6 @@ class GasBlendCalculationResults extends Ui.View {
         w,
         h
     ) {
-
         var titleFont =
             Gfx.FONT_LARGE;
 
@@ -140,6 +267,16 @@ class GasBlendCalculationResults extends Ui.View {
 
         var titleY =
             h * 75 / 1000;
+
+        var title;
+
+        if (_isEmptyBlend) {
+            title =
+                "EMPTY";
+        } else {
+            title =
+                "TOP-UP";
+        }
 
         dc.setColor(
             _white,
@@ -150,7 +287,7 @@ class GasBlendCalculationResults extends Ui.View {
             cx,
             titleY,
             titleFont,
-            "TOP-UP",
+            title,
             Gfx.TEXT_JUSTIFY_CENTER
         );
 
@@ -179,6 +316,16 @@ class GasBlendCalculationResults extends Ui.View {
             dividerY
         );
 
+        var subtitle;
+
+        if (_showFillPressures) {
+            subtitle =
+                "BLEND RESULTS (PRESSURE)";
+        } else {
+            subtitle =
+                "BLEND RESULTS (ADD)";
+        }
+
         dc.setColor(
             _white,
             Gfx.COLOR_TRANSPARENT
@@ -188,11 +335,10 @@ class GasBlendCalculationResults extends Ui.View {
             cx,
             dividerY + 6,
             subtitleFont,
-            "BLEND RESULTS",
+            subtitle,
             Gfx.TEXT_JUSTIFY_CENTER
         );
     }
-
 
     // =======================================================
     // RESULT ROW
@@ -206,7 +352,6 @@ class GasBlendCalculationResults extends Ui.View {
         label,
         value
     ) {
-
         var rowWidth =
             w * 70 / 100;
 
@@ -258,7 +403,6 @@ class GasBlendCalculationResults extends Ui.View {
         );
     }
 
-
     // =======================================================
     // FINAL MIX
     // =======================================================
@@ -270,7 +414,6 @@ class GasBlendCalculationResults extends Ui.View {
         h,
         dividerY
     ) {
-
         var dividerWidth =
             w * 70 / 100;
 
@@ -313,25 +456,12 @@ class GasBlendCalculationResults extends Ui.View {
 
         var mixText;
 
-        /*
-         * Standard trimix notation:
-         *
-         * O2 percentage / helium percentage
-         *
-         * Example: 18/45
-         *
-         * For a mix without helium, only the O2
-         * percentage is displayed.
-         */
         if (GasBlendData.targetHe > 0) {
-
             mixText =
                 GasBlendData.targetO2.format("%d") +
                 "/" +
                 GasBlendData.targetHe.format("%d");
-
         } else {
-
             mixText =
                 GasBlendData.targetO2.format("%d");
         }
@@ -356,5 +486,16 @@ class GasBlendCalculationResults extends Ui.View {
             mixText,
             Gfx.TEXT_JUSTIFY_CENTER
         );
+    }
+
+    // =======================================================
+    // RESULT MODE TOGGLE
+    // =======================================================
+
+    function toggleResultMode() {
+        _showFillPressures =
+            !_showFillPressures;
+
+        Ui.requestUpdate();
     }
 }

@@ -1007,11 +1007,15 @@ class EmptyGasView extends Ui.View {
         );
 
         var resultsView =
-            new GasBlendCalculationResults();
+            new GasBlendCalculationResults(
+                true
+            );
 
         Ui.pushView(
             resultsView,
-            new GasBlendCalculationResultsDelegate(),
+            new GasBlendCalculationResultsDelegate(
+                resultsView
+            ),
             Ui.SLIDE_LEFT
         );
     }

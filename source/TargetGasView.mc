@@ -1004,11 +1004,15 @@ class TargetGasView extends Ui.View {
         );
 
         var resultsView =
-            new GasBlendCalculationResults();
+            new GasBlendCalculationResults(
+                false
+            );
 
         Ui.pushView(
             resultsView,
-            new GasBlendCalculationResultsDelegate(),
+            new GasBlendCalculationResultsDelegate(
+                resultsView
+            ),
             Ui.SLIDE_LEFT
         );
     }
