@@ -1,4 +1,6 @@
 /bin/
+/imp/bin/
 /Test 51mm.bat
+/imp/Test 51mm.bat
 *.prg
 *.debug.xml

@@ -1,0 +1,24 @@
+<drawables xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+
+    <bitmap
+        id="LauncherIcon"
+        filename="Icon.png"
+        dithering="none" />
+
+    <bitmap
+        id="GTMain"
+        filename="gt_main.png"
+        dithering="none" />
+
+    <bitmap
+        id="InputSelect"
+        filename="input_select.png"
+        dithering="none" />
+
+    <bitmap
+        id="InputEdit"
+        filename="input_edit.png"
+        dithering="none" />
+
+</drawables>
